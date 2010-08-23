@@ -1,7 +1,17 @@
 package timecard.input.camera
 
+import java.io.File
+
 object Main {
   def main(args: Array[String]) {
-    new Viewer("/dev/video0")
+    for (dev <- videoDevices) new Viewer(dev)
+  }
+
+  // Returns array of video devices: /dev/video0, /dev/video1...
+  // See: https://code.google.com/p/v4l4j/source/browse/v4l4j/trunk/src/au/edu/jcu/v4l4j/examples/DeviceChooser.java
+  private def videoDevices: Array[String] = {
+    val dir = new File("/sys/class/video4linux/")
+    val devs = dir.list.filter(dev => dev.indexOf("video") != -1)
+    devs.map(dev => "/dev/" + dev)
   }
 }
