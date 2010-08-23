@@ -4,7 +4,13 @@ import java.io.File
 
 object Main {
   def main(args: Array[String]) {
-    for (dev <- videoDevices) new Viewer(dev)
+    val devs = videoDevices
+    if (devs.length == 0) {
+      println("No camera")
+    } else {
+      new Controller
+      for (dev <- devs) new Viewer(dev)
+    }
   }
 
   // Returns array of video devices: /dev/video0, /dev/video1...

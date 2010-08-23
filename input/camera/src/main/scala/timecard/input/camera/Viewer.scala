@@ -3,12 +3,9 @@
 package timecard.input.camera
 
 import java.awt.event.{WindowAdapter, WindowEvent}
-import java.io.IOException
-import java.nio.ByteBuffer
-
 import java.awt.{Graphics2D, Image}
 import java.awt.image.BufferedImage
-import javax.swing.{JFrame, WindowConstants, JLabel, ImageIcon}
+import javax.swing.{JFrame, WindowConstants, JLabel, ImageIcon, JRadioButton}
 
 import au.edu.jcu.v4l4j.{VideoDevice, FrameGrabber, V4L4JConstants}
 import au.edu.jcu.v4l4j.exceptions.V4L4JException
@@ -25,7 +22,7 @@ class Viewer(dev: String) extends WindowAdapter {
   private var l: JLabel = null
 
   private var qrcode: QRCode = null
-  private var stop = false
+  private var stopped = false
 
   init()
 
@@ -38,10 +35,9 @@ class Viewer(dev: String) extends WindowAdapter {
 
   /**
    * Catch window closing event so we can free up resources before exiting
-   * @param e
    */
   override def windowClosing(e: WindowEvent) {
-    stop = true
+    stopped = true
     if (fgThread.isAlive) {
       try {
         fgThread.join()
@@ -55,17 +51,18 @@ class Viewer(dev: String) extends WindowAdapter {
     f.dispose()
   }
 
-  /**
-   * Creates the graphical interface components and initialises them
-   */
   private def initGUI() {
     f = new JFrame
     l = new JLabel
     f.getContentPane.add(l)
+
+    f.setTitle(dev)
+    f.setSize(fg.getWidth, fg.getHeight + 30)
+    f.setResizable(false)
+    f.setVisible(true)
+
     f.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE)
     f.addWindowListener(this)
-    f.setVisible(true)
-    f.setSize(fg.getWidth, fg.getHeight)
   }
 
   private def initFrameGrabber() {
@@ -85,7 +82,7 @@ class Viewer(dev: String) extends WindowAdapter {
       // Gets frames and display
       def run() {
         try {
-          while (!stop) {
+          while (!stopped) {
             val bb = fg.getFrame()
             val b = new Array[Byte](bb.limit)
             bb.get(b)
