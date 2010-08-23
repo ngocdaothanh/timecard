@@ -1,0 +1,17 @@
+This is an input program written in Scala for Timecard project using camera
+(typically webcam).
+
+Supported platform: Linux (tested on Ubuntu 10.4 64 bit)
+
+== COMPILE
+
+Install v4l4j:
+* Goto http://code.google.com/p/v4l4j/downloads/list
+* Download and install, for example if your Linux is 64 bit:
+libvideo0_xxx_amd64.deb
+libv4l4j-java_xxx_amd64.deb
+libv4l4j-bin_xxx_all.deb (optional)
+
+Compile using SBT:
+sbt update
+sbt compile
