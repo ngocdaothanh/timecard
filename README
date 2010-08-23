@@ -1,0 +1,14 @@
+Timecard project
+
+== Directory layout
+
+|
++- input:     UIs for normal user to input time
+|  |
+|  \- camera: UI for normal user to input time using camera
+|
+\- admin:     UI for admin
+
+== DB
+
+CouchDB
