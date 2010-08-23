@@ -37,6 +37,8 @@ class Viewer(dev: String) extends WindowAdapter {
    * Catch window closing event so we can free up resources before exiting
    */
   override def windowClosing(e: WindowEvent) {
+    // Do not let user close the window
+    /*
     stopped = true
     if (fgThread.isAlive) {
       try {
@@ -49,6 +51,7 @@ class Viewer(dev: String) extends WindowAdapter {
     fg.stopCapture()
     vd.releaseFrameGrabber()
     f.dispose()
+    */
   }
 
   private def initGUI() {
@@ -61,7 +64,8 @@ class Viewer(dev: String) extends WindowAdapter {
     f.setResizable(false)
     f.setVisible(true)
 
-    f.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE)
+    //f.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE)
+    f.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE)
     f.addWindowListener(this)
   }
 

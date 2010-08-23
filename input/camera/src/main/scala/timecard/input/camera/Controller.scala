@@ -16,8 +16,11 @@ class Controller extends WindowAdapter {
   }
 
   override def windowClosing(e: WindowEvent) {
+    // Do not let user close the window
+    /*
     c.stop
     f.dispose()
+    */
   }
 
   /**
@@ -50,7 +53,8 @@ class Controller extends WindowAdapter {
     f.setResizable(false)
     f.setVisible(true)
 
-    f.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE)
+    //f.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE)
+    f.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE)
     f.addWindowListener(this)
   }
 }
