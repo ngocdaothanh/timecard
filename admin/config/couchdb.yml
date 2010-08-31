@@ -1,0 +1,3 @@
+development: http://localhost:5984/timecard
+test: http://localhost:5984/timecard_test
+production: http://localhost:5984/timecard_production
