@@ -2,3 +2,6 @@ lib_managed
 boot
 target
 .*
+
+*.lock
+admin/nbproject/
