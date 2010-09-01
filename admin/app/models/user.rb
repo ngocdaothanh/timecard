@@ -8,9 +8,12 @@ class User
   property :disabled, :type => :boolean, :default => false
 
 #  has_many :posts
+  belongs_to :group
 
   attr_accessor :password
-  attr_accessible :username, :name , :manager_id, :disabled
+#  attr_accessible :username, :name , :manager_id, :disabled, :password, :group
+
+  validates_presence_of :username, :name, :password
 
   before_save :encrypt_password
 

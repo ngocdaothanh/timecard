@@ -4,11 +4,21 @@ namespace :db do
   task :demo => :environment do
     require 'faker'
 
-    10.times do |n|
-      username = "user#{n+1}"
-      User.create(:username => username,
+    groupnames = ["Game", "RD"]
+    groupnames.each do |gn|
+      g = Group.create(:name => gn)
+
+      puts "Group id : #{g.id}"
+
+      3.times do |n|
+        username = "user#{n+1}"
+        user = User.create!(:username => username,
           :name => Faker::Name.name,
-          :password =>"a")
+          :password =>"a",
+          :group => g
+        )
+        puts "-- User id : #{user.id}"
+      end
     end
   end
 end
