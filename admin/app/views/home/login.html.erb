@@ -1,0 +1,23 @@
+<%#
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+%>
+
+<h2>Login Form</h2>
+
+<form method="post" action="/home/login">
+  <input type="hidden"  value="<%= form_authenticity_token %>"  name="authenticity_token"/>
+  <table width="40%">
+    <tr>
+      <td>User name: </td>
+      <td><input id="user_name" type="text" name="employee[user_name]" /></td>
+    </tr>
+    <tr>
+      <td>Password: </td>
+      <td><input id="password" type="password" name="employee[password]" /></td>
+    </tr>
+  </table>
+  <input type="submit" value="Login"/> | <%= link_to 'Go home', "/home/index" %>
+  <br /><br />
+  <span style="color: red"><%= @message %></span>
+</form>

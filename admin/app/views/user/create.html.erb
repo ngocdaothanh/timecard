@@ -1,0 +1,67 @@
+<%#
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+%>
+
+<h2>Register an user account</h2>
+<form method="POST" action="/user/create">
+  <input type="hidden"  value="<%= form_authenticity_token %>"  name="authenticity_token"/>
+  <table>
+    <tr>
+      <td>User name:</td>
+      <td>
+        <input type="text" id="username" name="user[username]" />
+      </td>
+    </tr>
+    <tr>
+      <td>Password:</td>
+      <td>
+        <input type="password" id="password" name="user[password]" />
+      </td>
+    </tr>
+    <tr>
+      <td>Confirm password:</td>
+      <td>
+        <input type="password" id="cfm_password" name="user[cfm_password]" />
+      </td>
+    </tr>
+    <tr>
+      <td>Full name:</td>
+      <td>
+        <input type="text" id="name" name="user[name]" />
+      </td>
+    </tr>
+    <tr>
+      <td>Group name:</td>
+      <td>
+        <select id="group_id" name="user[group_id]">
+          <option value="1">group_1</option>
+          <option value="2">group_2</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>Manager:</td>
+      <td>
+        <select id="manager_id" name="user[manager_id]">
+          <option value="1">manager_1</option>
+          <option value="2">manager_2</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>Disabled:</td>
+      <td>
+        <input type="checkbox" id="disabled" name="user[disabled]"/>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <input type="submit" value="Submit" />
+        <input type="button" value="Cancel" onclick="document.location='/home/index'" />
+      </td>
+    </tr>
+  </table>
+  <br /><br />
+  <span style="color: red"><%= @message %></span>
+</form>

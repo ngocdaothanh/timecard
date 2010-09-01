@@ -7,8 +7,14 @@
   <%= csrf_meta_tag %>
 </head>
 <body>
-
-<%= yield %>
-
+  <table width="100%">
+    <tr>
+      <td style="text-align: right">
+        <%= session['user_name'] %>| <a href="/home/login">Login</a> | <a href="/home/logout">Logout</a> | <a href="/user/create">Create User</a> |
+      </td>
+    </tr>
+  </table>
+  <h1></h1>
+  <%= yield %>
 </body>
 </html>

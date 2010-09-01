@@ -1,0 +1,73 @@
+
+
+Started GET "/" for 127.0.0.1 at 2010-09-01 13:04:58 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 11ms (Views: 10.0ms)
+
+
+Started GET "/home/logout" for 127.0.0.1 at 2010-09-01 13:05:02 +0700
+  Processing by HomeController#logout as HTML
+Redirected to http://localhost:3000/home/index
+Completed 302 Found in 1ms
+
+
+Started GET "/home/index" for 127.0.0.1 at 2010-09-01 13:05:02 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 11ms (Views: 9.9ms)
+
+
+Started GET "/home/login" for 127.0.0.1 at 2010-09-01 13:05:04 +0700
+  Processing by HomeController#login as HTML
+Rendered home/login.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 47ms (Views: 46.4ms)
+
+
+Started GET "/user/create" for 127.0.0.1 at 2010-09-01 13:05:10 +0700
+  Processing by UserController#create as HTML
+Redirected to http://localhost:3000/home/index
+Completed 302 Found in 1ms
+
+
+Started GET "/home/index" for 127.0.0.1 at 2010-09-01 13:05:10 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 15ms (Views: 14.4ms)
+
+
+Started GET "/user/create" for 127.0.0.1 at 2010-09-01 13:05:14 +0700
+  Processing by UserController#create as HTML
+Redirected to http://localhost:3000/home/index
+Completed 302 Found in 1ms
+
+
+Started GET "/home/index" for 127.0.0.1 at 2010-09-01 13:05:14 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 14ms (Views: 10.9ms)
+
+
+Started GET "/home/login" for 127.0.0.1 at 2010-09-01 13:05:22 +0700
+  Processing by HomeController#login as HTML
+Rendered home/login.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 12ms (Views: 11.3ms)
+
+
+Started POST "/home/login" for 127.0.0.1 at 2010-09-01 13:05:29 +0700
+  Processing by HomeController#login as HTML
+  Parameters: {"authenticity_token"=>"jHYzSHRcTgJ0E/ks1mCzagfZgUfe8FkD36FWbtLcXHI=", "employee"=>{"user_name"=>"phuong", "password"=>"[FILTERED]"}}
+Redirected to http://localhost:3000/home/index
+Completed 302 Found in 1ms
+
+
+Started GET "/home/index" for 127.0.0.1 at 2010-09-01 13:05:29 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 23ms (Views: 21.4ms)
+
+
+Started GET "/user/create" for 127.0.0.1 at 2010-09-01 13:05:35 +0700
+  Processing by UserController#create as HTML
+Rendered user/create.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 13ms (Views: 11.4ms)
