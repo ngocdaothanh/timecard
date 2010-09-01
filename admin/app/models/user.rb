@@ -9,6 +9,7 @@ class User
 
 #  has_many :posts
   belongs_to :group
+  has_many :timeentries
 
   attr_accessor :password
 #  attr_accessible :username, :name , :manager_id, :disabled, :password, :group

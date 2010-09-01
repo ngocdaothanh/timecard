@@ -2,11 +2,13 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
 
   def must_login
-    redirect_to :controller => "home", :action => "login"
+    #redirect_to ':controller => "home", :action => "login"'
+    redirect_to home_login_path
   end
 
   def go_home
-    redirect_to :controller => "home", :action => "index"
+    #redirect_to :controller => "home", :action => "index"
+    redirect_to home_index_path
   end
 
   def authenticate

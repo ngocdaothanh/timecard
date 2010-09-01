@@ -71,3 +71,147 @@ Started GET "/user/create" for 127.0.0.1 at 2010-09-01 13:05:35 +0700
   Processing by UserController#create as HTML
 Rendered user/create.html.erb within layouts/application (2.9ms)
 Completed 200 OK in 13ms (Views: 11.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-09-01 13:32:58 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 10ms (Views: 9.8ms)
+
+
+Started GET "/home/login" for 127.0.0.1 at 2010-09-01 13:33:35 +0700
+  Processing by HomeController#login as HTML
+Rendered home/login.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 9ms (Views: 8.2ms)
+
+
+Started GET "/home/logout" for 127.0.0.1 at 2010-09-01 13:33:38 +0700
+  Processing by HomeController#logout as HTML
+Redirected to http://localhost:3000/home/index
+Completed 302 Found in 1ms
+
+
+Started GET "/home/index" for 127.0.0.1 at 2010-09-01 13:33:38 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 9ms (Views: 8.8ms)
+
+
+Started GET "/user/create" for 127.0.0.1 at 2010-09-01 13:33:43 +0700
+  Processing by UserController#create as HTML
+Redirected to http://localhost:3000/home/index
+Completed 302 Found in 1ms
+
+
+Started GET "/home/index" for 127.0.0.1 at 2010-09-01 13:33:43 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 9ms (Views: 8.5ms)
+
+
+Started GET "/home/index" for 127.0.0.1 at 2010-09-01 13:35:33 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 11ms (Views: 10.4ms)
+
+
+Started GET "/user/create" for 127.0.0.1 at 2010-09-01 13:35:36 +0700
+  Processing by UserController#create as HTML
+Redirected to http://localhost:3000home#index
+Completed 302 Found in 1ms
+
+
+Started GET "/user/create" for 127.0.0.1 at 2010-09-01 13:35:36 +0700
+  Processing by UserController#create as HTML
+Redirected to http://localhost:3000home#index
+Completed 302 Found in 1ms
+
+
+Started GET "/user/create" for 127.0.0.1 at 2010-09-01 13:36:22 +0700
+  Processing by UserController#create as HTML
+Redirected to http://localhost:3000/home/index
+Completed 302 Found in 2ms
+
+
+Started GET "/home/index" for 127.0.0.1 at 2010-09-01 13:36:22 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 8ms (Views: 7.8ms)
+
+
+Started GET "/user/create" for 127.0.0.1 at 2010-09-01 13:36:24 +0700
+  Processing by UserController#create as HTML
+Redirected to http://localhost:3000/home/index
+Completed 302 Found in 1ms
+
+
+Started GET "/home/index" for 127.0.0.1 at 2010-09-01 13:36:24 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 9ms (Views: 7.0ms)
+
+
+Started GET "/user/create" for 127.0.0.1 at 2010-09-01 13:36:24 +0700
+  Processing by UserController#create as HTML
+Redirected to http://localhost:3000/home/index
+Completed 302 Found in 1ms
+
+
+Started GET "/home/index" for 127.0.0.1 at 2010-09-01 13:36:24 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 8ms (Views: 7.9ms)
+
+
+Started GET "/home/index" for 127.0.0.1 at 2010-09-01 13:38:22 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 8ms (Views: 7.4ms)
+
+
+Started GET "/user/create" for 127.0.0.1 at 2010-09-01 13:38:24 +0700
+  Processing by UserController#create as HTML
+Redirected to http://localhost:3000/home/index
+Completed 302 Found in 1ms
+
+
+Started GET "/home/index" for 127.0.0.1 at 2010-09-01 13:38:24 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 9ms (Views: 8.4ms)
+
+
+Started GET "/home/login" for 127.0.0.1 at 2010-09-01 13:38:25 +0700
+  Processing by HomeController#login as HTML
+Rendered home/login.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 9ms (Views: 8.4ms)
+
+
+Started GET "/home/logout" for 127.0.0.1 at 2010-09-01 13:38:26 +0700
+  Processing by HomeController#logout as HTML
+Redirected to http://localhost:3000/home/index
+Completed 302 Found in 1ms
+
+
+Started GET "/home/index" for 127.0.0.1 at 2010-09-01 13:38:26 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 7ms (Views: 6.9ms)
+
+
+Started GET "/user/create" for 127.0.0.1 at 2010-09-01 13:38:27 +0700
+  Processing by UserController#create as HTML
+Redirected to http://localhost:3000/home/index
+Completed 302 Found in 1ms
+
+
+Started GET "/home/index" for 127.0.0.1 at 2010-09-01 13:38:27 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 7ms (Views: 6.9ms)
+
+
+Started GET "/home/login" for 127.0.0.1 at 2010-09-01 13:39:10 +0700
+  Processing by HomeController#login as HTML
+Rendered home/login.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 9ms (Views: 8.6ms)
