@@ -14,4 +14,9 @@ class ApplicationController < ActionController::Base
   def authenticate
     session['is_authenticated'] == 'authenticated'
   end
+
+  def get_encrypt(s)
+      s ||= ""
+      Digest::SHA2.hexdigest(s)
+  end
 end

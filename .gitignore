@@ -5,3 +5,4 @@ target
 
 *.lock
 admin/nbproject/
+log/*

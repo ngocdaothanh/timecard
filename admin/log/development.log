@@ -73,6 +73,7 @@ Rendered user/create.html.erb within layouts/application (2.9ms)
 Completed 200 OK in 13ms (Views: 11.4ms)
 
 
+<<<<<<< HEAD
 Started GET "/" for 127.0.0.1 at 2010-09-01 13:32:58 +0700
   Processing by HomeController#index as HTML
 Rendered home/index.html.erb within layouts/application (2.2ms)
@@ -98,11 +99,94 @@ Completed 200 OK in 9ms (Views: 8.8ms)
 
 
 Started GET "/user/create" for 127.0.0.1 at 2010-09-01 13:33:43 +0700
+=======
+Started GET "/home/logout" for 127.0.0.1 at 2010-09-01 13:14:23 +0700
+  Processing by HomeController#logout as HTML
+Redirected to http://localhost:3000/home/index
+Completed 302 Found in 1ms
+
+
+Started GET "/home/index" for 127.0.0.1 at 2010-09-01 13:14:23 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 14ms (Views: 13.8ms)
+
+
+Started GET "/user/create" for 127.0.0.1 at 2010-09-01 13:14:25 +0700
   Processing by UserController#create as HTML
 Redirected to http://localhost:3000/home/index
 Completed 302 Found in 1ms
 
 
+Started GET "/home/index" for 127.0.0.1 at 2010-09-01 13:14:25 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 14ms (Views: 13.2ms)
+
+
+Started GET "/home/login" for 127.0.0.1 at 2010-09-01 13:14:28 +0700
+  Processing by HomeController#login as HTML
+Rendered home/login.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 14ms (Views: 13.8ms)
+
+
+Started POST "/home/login" for 127.0.0.1 at 2010-09-01 13:14:42 +0700
+  Processing by HomeController#login as HTML
+  Parameters: {"authenticity_token"=>"jHYzSHRcTgJ0E/ks1mCzagfZgUfe8FkD36FWbtLcXHI=", "employee"=>{"user_name"=>"phuong", "password"=>"[FILTERED]"}}
+Redirected to http://localhost:3000/home/index
+Completed 302 Found in 1ms
+
+
+Started GET "/home/index" for 127.0.0.1 at 2010-09-01 13:14:42 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (12.9ms)
+Completed 200 OK in 33ms (Views: 29.8ms)
+
+
+Started GET "/user/create" for 127.0.0.1 at 2010-09-01 13:14:46 +0700
+  Processing by UserController#create as HTML
+Rendered user/create.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 12ms (Views: 10.5ms)
+
+
+Started GET "/home/index" for 127.0.0.1 at 2010-09-01 13:15:00 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 43ms (Views: 42.8ms)
+
+
+Started GET "/home/logout" for 127.0.0.1 at 2010-09-01 13:15:06 +0700
+  Processing by HomeController#logout as HTML
+Redirected to http://localhost:3000/home/index
+Completed 302 Found in 2ms
+
+
+Started GET "/home/index" for 127.0.0.1 at 2010-09-01 13:15:06 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 10ms (Views: 9.5ms)
+
+
+Started GET "/user/create" for 127.0.0.1 at 2010-09-01 13:15:07 +0700
+  Processing by UserController#create as HTML
+Redirected to http://localhost:3000/home/index
+Completed 302 Found in 1ms
+
+
+Started GET "/home/index" for 127.0.0.1 at 2010-09-01 13:15:07 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 10ms (Views: 9.9ms)
+
+
+Started GET "/user/create" for 127.0.0.1 at 2010-09-01 13:15:08 +0700
+>>>>>>> ea1ce3f7d8be9e624bc075b7d4f2f438fdabdcd2
+  Processing by UserController#create as HTML
+Redirected to http://localhost:3000/home/index
+Completed 302 Found in 1ms
+
+
+<<<<<<< HEAD
 Started GET "/home/index" for 127.0.0.1 at 2010-09-01 13:33:43 +0700
   Processing by HomeController#index as HTML
 Rendered home/index.html.erb within layouts/application (1.7ms)
@@ -129,10 +213,96 @@ Completed 302 Found in 1ms
 
 Started GET "/user/create" for 127.0.0.1 at 2010-09-01 13:36:22 +0700
   Processing by UserController#create as HTML
+=======
+Started GET "/home/index" for 127.0.0.1 at 2010-09-01 13:15:08 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 11ms (Views: 9.2ms)
+
+
+Started GET "/user/create" for 127.0.0.1 at 2010-09-01 13:15:08 +0700
+  Processing by UserController#create as HTML
 Redirected to http://localhost:3000/home/index
 Completed 302 Found in 2ms
 
 
+Started GET "/home/index" for 127.0.0.1 at 2010-09-01 13:15:08 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 15ms (Views: 14.2ms)
+
+
+Started GET "/user/create" for 127.0.0.1 at 2010-09-01 13:15:09 +0700
+  Processing by UserController#create as HTML
+Redirected to http://localhost:3000/home/index
+Completed 302 Found in 3ms
+
+
+Started GET "/home/index" for 127.0.0.1 at 2010-09-01 13:15:09 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 16ms (Views: 15.3ms)
+
+
+Started GET "/home/login" for 127.0.0.1 at 2010-09-01 13:16:35 +0700
+  Processing by HomeController#login as HTML
+Rendered home/login.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 13ms (Views: 12.9ms)
+
+
+Started POST "/home/login" for 127.0.0.1 at 2010-09-01 13:16:40 +0700
+  Processing by HomeController#login as HTML
+  Parameters: {"authenticity_token"=>"jHYzSHRcTgJ0E/ks1mCzagfZgUfe8FkD36FWbtLcXHI=", "employee"=>{"user_name"=>"phuong", "password"=>"[FILTERED]"}}
+Redirected to http://localhost:3000/home/index
+Completed 302 Found in 9ms
+
+
+Started GET "/home/index" for 127.0.0.1 at 2010-09-01 13:16:40 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 11ms (Views: 9.7ms)
+
+
+Started GET "/user/create" for 127.0.0.1 at 2010-09-01 13:16:45 +0700
+  Processing by UserController#create as HTML
+Rendered user/create.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 12ms (Views: 11.7ms)
+
+
+Started POST "/user/create" for 127.0.0.1 at 2010-09-01 13:17:08 +0700
+  Processing by UserController#create as HTML
+  Parameters: {"authenticity_token"=>"jHYzSHRcTgJ0E/ks1mCzagfZgUfe8FkD36FWbtLcXHI=", "user"=>{"username"=>"hero", "password"=>"[FILTERED]", "cfm_password"=>"[FILTERED]", "name"=>"hero brook", "group_id"=>"2", "manager_id"=>"2"}}
+Rendered user/create.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 492ms (Views: 20.5ms)
+
+
+Started GET "/home/logout" for 127.0.0.1 at 2010-09-01 13:27:09 +0700
+  Processing by HomeController#logout as HTML
+Redirected to http://localhost:3000/home/index
+Completed 302 Found in 2ms
+
+
+Started GET "/home/index" for 127.0.0.1 at 2010-09-01 13:27:09 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 16ms (Views: 15.6ms)
+
+
+Started GET "/home/login" for 127.0.0.1 at 2010-09-01 13:27:15 +0700
+  Processing by HomeController#login as HTML
+Rendered home/login.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 11ms (Views: 10.2ms)
+
+
+Started POST "/home/login" for 127.0.0.1 at 2010-09-01 13:27:24 +0700
+  Processing by HomeController#login as HTML
+  Parameters: {"authenticity_token"=>"jHYzSHRcTgJ0E/ks1mCzagfZgUfe8FkD36FWbtLcXHI=", "employee"=>{"user_name"=>"phuong", "password"=>"[FILTERED]"}}
+>>>>>>> ea1ce3f7d8be9e624bc075b7d4f2f438fdabdcd2
+Redirected to http://localhost:3000/home/index
+Completed 302 Found in 2ms
+
+
+<<<<<<< HEAD
 Started GET "/home/index" for 127.0.0.1 at 2010-09-01 13:36:22 +0700
   Processing by HomeController#index as HTML
 Rendered home/index.html.erb within layouts/application (1.9ms)
@@ -141,10 +311,68 @@ Completed 200 OK in 8ms (Views: 7.8ms)
 
 Started GET "/user/create" for 127.0.0.1 at 2010-09-01 13:36:24 +0700
   Processing by UserController#create as HTML
+=======
+Started GET "/home/index" for 127.0.0.1 at 2010-09-01 13:27:25 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 11ms (Views: 10.2ms)
+
+
+Started GET "/user/create" for 127.0.0.1 at 2010-09-01 13:27:27 +0700
+  Processing by UserController#create as HTML
+Rendered user/create.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 20ms (Views: 19.4ms)
+
+
+Started POST "/user/create" for 127.0.0.1 at 2010-09-01 13:28:00 +0700
+  Processing by UserController#create as HTML
+  Parameters: {"authenticity_token"=>"jHYzSHRcTgJ0E/ks1mCzagfZgUfe8FkD36FWbtLcXHI=", "user"=>{"username"=>"batman", "password"=>"[FILTERED]", "cfm_password"=>"[FILTERED]", "name"=>"batman hero", "group_id"=>"2", "manager_id"=>"2"}}
+Rendered user/create.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 275ms (Views: 12.7ms)
+
+
+Started GET "/user/create" for 127.0.0.1 at 2010-09-01 13:45:27 +0700
+  Processing by UserController#create as HTML
+Rendered user/create.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 283ms (Views: 10.8ms)
+
+
+Started GET "/user/create" for 127.0.0.1 at 2010-09-01 14:19:05 +0700
+  Processing by UserController#create as HTML
+Rendered user/create.html.erb within layouts/application (81.1ms)
+Completed   in 434ms
+
+ActionView::Template::Error (undefined local variable or method `group' for #<#<Class:0x9e2f514>:0x9e2c9cc>):
+    46:       <td>
+    47:         <select id="manager_id" name="user[manager_id]">
+    48:           <% @users.each do |user| %>
+    49:             <option value="<%=user.id%>"><%=group.username%></option>
+    50:           <%end%>
+    51:         </select>
+    52:       </td>
+  app/views/user/create.html.erb:49:in `block in _app_views_user_create_html_erb__542298343_82925680__519175464'
+  app/views/user/create.html.erb:48:in `each'
+  app/views/user/create.html.erb:48:in `_app_views_user_create_html_erb__542298343_82925680__519175464'
+
+Rendered /home/phuong/.rvm/gems/ruby-1.9.2-head/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.5ms)
+Rendered /home/phuong/.rvm/gems/ruby-1.9.2-head/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (9.6ms)
+Rendered /home/phuong/.rvm/gems/ruby-1.9.2-head/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (20.4ms)
+
+
+Started GET "/user/create" for 127.0.0.1 at 2010-09-01 14:19:34 +0700
+  Processing by UserController#create as HTML
+Rendered user/create.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 117ms (Views: 10.9ms)
+
+
+Started GET "/home/logout" for 127.0.0.1 at 2010-09-01 15:00:47 +0700
+  Processing by HomeController#logout as HTML
+>>>>>>> ea1ce3f7d8be9e624bc075b7d4f2f438fdabdcd2
 Redirected to http://localhost:3000/home/index
 Completed 302 Found in 1ms
 
 
+<<<<<<< HEAD
 Started GET "/home/index" for 127.0.0.1 at 2010-09-01 13:36:24 +0700
   Processing by HomeController#index as HTML
 Rendered home/index.html.erb within layouts/application (1.7ms)
@@ -153,10 +381,342 @@ Completed 200 OK in 9ms (Views: 7.0ms)
 
 Started GET "/user/create" for 127.0.0.1 at 2010-09-01 13:36:24 +0700
   Processing by UserController#create as HTML
+=======
+Started GET "/home/index" for 127.0.0.1 at 2010-09-01 15:00:47 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 10ms (Views: 9.5ms)
+
+
+Started GET "/home/login" for 127.0.0.1 at 2010-09-01 15:00:48 +0700
+  Processing by HomeController#login as HTML
+Rendered home/login.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 10ms (Views: 9.6ms)
+
+
+Started POST "/home/login" for 127.0.0.1 at 2010-09-01 15:00:55 +0700
+  Processing by HomeController#login as HTML
+  Parameters: {"authenticity_token"=>"jHYzSHRcTgJ0E/ks1mCzagfZgUfe8FkD36FWbtLcXHI=", "employee"=>{"username"=>"phuong", "password"=>"[FILTERED]"}}
+Rendered home/login.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 105ms (Views: 10.8ms)
+
+
+Started POST "/home/login" for 127.0.0.1 at 2010-09-01 15:05:08 +0700
+  Processing by HomeController#login as HTML
+  Parameters: {"authenticity_token"=>"jHYzSHRcTgJ0E/ks1mCzagfZgUfe8FkD36FWbtLcXHI=", "employee"=>{"username"=>"batman", "password"=>"[FILTERED]"}}
+Rendered home/login.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 48ms (Views: 10.8ms)
+
+
+Started POST "/home/login" for 127.0.0.1 at 2010-09-01 15:05:47 +0700
+  Processing by HomeController#login as HTML
+  Parameters: {"authenticity_token"=>"jHYzSHRcTgJ0E/ks1mCzagfZgUfe8FkD36FWbtLcXHI=", "employee"=>{"username"=>"batman", "password"=>"[FILTERED]"}}
+Rendered home/login.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 45ms (Views: 15.1ms)
+
+
+Started POST "/home/login" for 127.0.0.1 at 2010-09-01 15:07:03 +0700
+  Processing by HomeController#login as HTML
+  Parameters: {"authenticity_token"=>"jHYzSHRcTgJ0E/ks1mCzagfZgUfe8FkD36FWbtLcXHI=", "employee"=>{"username"=>"batman", "password"=>"[FILTERED]"}}
+Rendered home/login.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 138ms (Views: 10.1ms)
+
+
+Started POST "/home/login" for 127.0.0.1 at 2010-09-01 15:08:33 +0700
+  Processing by HomeController#login as HTML
+  Parameters: {"authenticity_token"=>"jHYzSHRcTgJ0E/ks1mCzagfZgUfe8FkD36FWbtLcXHI=", "employee"=>{"username"=>"batman", "password"=>"[FILTERED]"}}
+Completed   in 118ms
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.size):
+  app/controllers/home_controller.rb:20:in `login'
+
+Rendered /home/phuong/.rvm/gems/ruby-1.9.2-head/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.9ms)
+Rendered /home/phuong/.rvm/gems/ruby-1.9.2-head/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (7.5ms)
+Rendered /home/phuong/.rvm/gems/ruby-1.9.2-head/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (17.8ms)
+
+
+Started POST "/home/login" for 127.0.0.1 at 2010-09-01 15:09:44 +0700
+  Processing by HomeController#login as HTML
+  Parameters: {"authenticity_token"=>"jHYzSHRcTgJ0E/ks1mCzagfZgUfe8FkD36FWbtLcXHI=", "employee"=>{"username"=>"batman", "password"=>"[FILTERED]"}}
+Completed   in 23ms
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.[]):
+  app/controllers/home_controller.rb:18:in `login'
+
+Rendered /home/phuong/.rvm/gems/ruby-1.9.2-head/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.8ms)
+Rendered /home/phuong/.rvm/gems/ruby-1.9.2-head/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (7.2ms)
+Rendered /home/phuong/.rvm/gems/ruby-1.9.2-head/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (18.5ms)
+
+
+Started POST "/home/login" for 127.0.0.1 at 2010-09-01 15:11:48 +0700
+  Processing by HomeController#login as HTML
+  Parameters: {"authenticity_token"=>"jHYzSHRcTgJ0E/ks1mCzagfZgUfe8FkD36FWbtLcXHI=", "employee"=>{"username"=>"batman", "password"=>"[FILTERED]"}}
+Completed   in 21ms
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.[]):
+  app/controllers/home_controller.rb:18:in `login'
+
+Rendered /home/phuong/.rvm/gems/ruby-1.9.2-head/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.4ms)
+Rendered /home/phuong/.rvm/gems/ruby-1.9.2-head/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (48.7ms)
+Rendered /home/phuong/.rvm/gems/ruby-1.9.2-head/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (59.0ms)
+
+
+Started POST "/home/login" for 127.0.0.1 at 2010-09-01 15:11:55 +0700
+  Processing by HomeController#login as HTML
+  Parameters: {"authenticity_token"=>"jHYzSHRcTgJ0E/ks1mCzagfZgUfe8FkD36FWbtLcXHI=", "employee"=>{"username"=>"batman", "password"=>"[FILTERED]"}}
+Completed   in 24ms
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.[]):
+  app/controllers/home_controller.rb:18:in `login'
+
+Rendered /home/phuong/.rvm/gems/ruby-1.9.2-head/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.6ms)
+Rendered /home/phuong/.rvm/gems/ruby-1.9.2-head/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (7.5ms)
+Rendered /home/phuong/.rvm/gems/ruby-1.9.2-head/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (17.6ms)
+
+
+Started POST "/home/login" for 127.0.0.1 at 2010-09-01 15:15:04 +0700
+  Processing by HomeController#login as HTML
+  Parameters: {"authenticity_token"=>"jHYzSHRcTgJ0E/ks1mCzagfZgUfe8FkD36FWbtLcXHI=", "employee"=>{"username"=>"batman", "password"=>"[FILTERED]"}}
+Completed   in 20ms
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.[]):
+  app/controllers/home_controller.rb:18:in `login'
+
+Rendered /home/phuong/.rvm/gems/ruby-1.9.2-head/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.3ms)
+Rendered /home/phuong/.rvm/gems/ruby-1.9.2-head/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (7.2ms)
+Rendered /home/phuong/.rvm/gems/ruby-1.9.2-head/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (16.4ms)
+
+
+Started POST "/home/login" for 127.0.0.1 at 2010-09-01 15:17:46 +0700
+  Processing by HomeController#login as HTML
+  Parameters: {"authenticity_token"=>"jHYzSHRcTgJ0E/ks1mCzagfZgUfe8FkD36FWbtLcXHI=", "employee"=>{"username"=>"batman", "password"=>"[FILTERED]"}}
+Completed   in 20ms
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.[]):
+  app/controllers/home_controller.rb:18:in `login'
+
+Rendered /home/phuong/.rvm/gems/ruby-1.9.2-head/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.3ms)
+Rendered /home/phuong/.rvm/gems/ruby-1.9.2-head/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (7.8ms)
+Rendered /home/phuong/.rvm/gems/ruby-1.9.2-head/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (17.3ms)
+
+
+Started POST "/home/login" for 127.0.0.1 at 2010-09-01 15:26:39 +0700
+  Processing by HomeController#login as HTML
+  Parameters: {"authenticity_token"=>"jHYzSHRcTgJ0E/ks1mCzagfZgUfe8FkD36FWbtLcXHI=", "employee"=>{"username"=>"batman", "password"=>"[FILTERED]"}}
+Completed   in 64ms
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.[]):
+  app/controllers/home_controller.rb:18:in `login'
+
+Rendered /home/phuong/.rvm/gems/ruby-1.9.2-head/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.4ms)
+Rendered /home/phuong/.rvm/gems/ruby-1.9.2-head/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (7.2ms)
+Rendered /home/phuong/.rvm/gems/ruby-1.9.2-head/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (16.8ms)
+
+
+Started POST "/home/login" for 127.0.0.1 at 2010-09-01 15:29:15 +0700
+  Processing by HomeController#login as HTML
+  Parameters: {"authenticity_token"=>"jHYzSHRcTgJ0E/ks1mCzagfZgUfe8FkD36FWbtLcXHI=", "employee"=>{"username"=>"batman", "password"=>"[FILTERED]"}}
+Completed   in 20ms
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.[]):
+  app/controllers/home_controller.rb:18:in `login'
+
+Rendered /home/phuong/.rvm/gems/ruby-1.9.2-head/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.3ms)
+Rendered /home/phuong/.rvm/gems/ruby-1.9.2-head/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (7.2ms)
+Rendered /home/phuong/.rvm/gems/ruby-1.9.2-head/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (16.5ms)
+
+
+Started POST "/home/login" for 127.0.0.1 at 2010-09-01 15:29:26 +0700
+  Processing by HomeController#login as HTML
+  Parameters: {"authenticity_token"=>"jHYzSHRcTgJ0E/ks1mCzagfZgUfe8FkD36FWbtLcXHI=", "employee"=>{"username"=>"batman", "password"=>"[FILTERED]"}}
+Completed   in 21ms
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.[]):
+  app/controllers/home_controller.rb:18:in `login'
+
+Rendered /home/phuong/.rvm/gems/ruby-1.9.2-head/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.2ms)
+Rendered /home/phuong/.rvm/gems/ruby-1.9.2-head/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (7.3ms)
+Rendered /home/phuong/.rvm/gems/ruby-1.9.2-head/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (16.6ms)
+
+
+Started GET "/home/login" for 127.0.0.1 at 2010-09-01 15:29:34 +0700
+  Processing by HomeController#login as HTML
+Rendered home/login.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 10ms (Views: 9.7ms)
+
+
+Started POST "/home/login" for 127.0.0.1 at 2010-09-01 15:29:46 +0700
+  Processing by HomeController#login as HTML
+  Parameters: {"authenticity_token"=>"jHYzSHRcTgJ0E/ks1mCzagfZgUfe8FkD36FWbtLcXHI=", "user"=>{"username"=>"batman", "password"=>"[FILTERED]"}}
+Rendered home/login.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 46ms (Views: 15.0ms)
+
+
+Started POST "/home/login" for 127.0.0.1 at 2010-09-01 15:30:09 +0700
+  Processing by HomeController#login as HTML
+  Parameters: {"authenticity_token"=>"jHYzSHRcTgJ0E/ks1mCzagfZgUfe8FkD36FWbtLcXHI=", "user"=>{"username"=>"batman", "password"=>"[FILTERED]"}}
+Rendered home/login.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 46ms (Views: 10.3ms)
+
+
+Started POST "/home/login" for 127.0.0.1 at 2010-09-01 15:31:20 +0700
+  Processing by HomeController#login as HTML
+  Parameters: {"authenticity_token"=>"jHYzSHRcTgJ0E/ks1mCzagfZgUfe8FkD36FWbtLcXHI=", "user"=>{"username"=>"user10", "password"=>"[FILTERED]"}}
+Redirected to http://localhost:3000/home/index
+Completed 302 Found in 36ms
+
+
+Started GET "/home/index" for 127.0.0.1 at 2010-09-01 15:31:20 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 10ms (Views: 9.7ms)
+
+
+Started GET "/user/create" for 127.0.0.1 at 2010-09-01 15:31:51 +0700
+  Processing by UserController#create as HTML
+Rendered user/create.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 117ms (Views: 10.5ms)
+
+
+Started GET "/home/logout" for 127.0.0.1 at 2010-09-01 15:31:54 +0700
+  Processing by HomeController#logout as HTML
 Redirected to http://localhost:3000/home/index
 Completed 302 Found in 1ms
 
 
+Started GET "/home/index" for 127.0.0.1 at 2010-09-01 15:31:54 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 11ms (Views: 10.7ms)
+
+
+Started GET "/home/login" for 127.0.0.1 at 2010-09-01 15:39:41 +0700
+  Processing by HomeController#login as HTML
+Rendered home/login.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 10ms (Views: 9.5ms)
+
+
+Started POST "/home/login" for 127.0.0.1 at 2010-09-01 15:39:52 +0700
+  Processing by HomeController#login as HTML
+  Parameters: {"authenticity_token"=>"jHYzSHRcTgJ0E/ks1mCzagfZgUfe8FkD36FWbtLcXHI=", "user"=>{"username"=>"batman", "password"=>"[FILTERED]"}}
+Completed   in 20ms
+
+NoMethodError (undefined method `get_encrypt' for User:Class):
+  app/controllers/home_controller.rb:18:in `login'
+
+Rendered /home/phuong/.rvm/gems/ruby-1.9.2-head/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (4.3ms)
+Rendered /home/phuong/.rvm/gems/ruby-1.9.2-head/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (12.2ms)
+Rendered /home/phuong/.rvm/gems/ruby-1.9.2-head/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (24.5ms)
+
+
+Started GET "/home/login" for 127.0.0.1 at 2010-09-01 15:44:03 +0700
+  Processing by HomeController#login as HTML
+Rendered home/login.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 11ms (Views: 10.1ms)
+
+
+Started GET "/home/login" for 127.0.0.1 at 2010-09-01 15:44:08 +0700
+  Processing by HomeController#login as HTML
+Rendered home/login.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 10ms (Views: 9.4ms)
+
+
+Started POST "/home/login" for 127.0.0.1 at 2010-09-01 15:44:15 +0700
+  Processing by HomeController#login as HTML
+  Parameters: {"authenticity_token"=>"jHYzSHRcTgJ0E/ks1mCzagfZgUfe8FkD36FWbtLcXHI=", "user"=>{"username"=>"batman", "password"=>"[FILTERED]"}}
+Redirected to http://localhost:3000/home/index
+Completed 302 Found in 78ms
+
+
+Started GET "/home/index" for 127.0.0.1 at 2010-09-01 15:44:15 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 10ms (Views: 9.4ms)
+
+
+Started GET "/home/logout" for 127.0.0.1 at 2010-09-01 15:45:58 +0700
+  Processing by HomeController#logout as HTML
+Redirected to http://localhost:3000/home/index
+Completed 302 Found in 1ms
+
+
+Started GET "/home/index" for 127.0.0.1 at 2010-09-01 15:45:58 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 10ms (Views: 9.8ms)
+
+
+Started GET "/home/login" for 127.0.0.1 at 2010-09-01 15:45:59 +0700
+  Processing by HomeController#login as HTML
+Rendered home/login.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 10ms (Views: 9.5ms)
+
+
+Started POST "/home/login" for 127.0.0.1 at 2010-09-01 15:46:06 +0700
+  Processing by HomeController#login as HTML
+  Parameters: {"authenticity_token"=>"jHYzSHRcTgJ0E/ks1mCzagfZgUfe8FkD36FWbtLcXHI=", "user"=>{"username"=>"user10", "password"=>"[FILTERED]"}}
+Rendered home/login.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 40ms (Views: 10.5ms)
+
+
+Started GET "/home/login" for 127.0.0.1 at 2010-09-01 15:46:11 +0700
+  Processing by HomeController#login as HTML
+Rendered home/login.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 10ms (Views: 9.4ms)
+
+
+Started POST "/home/login" for 127.0.0.1 at 2010-09-01 15:50:40 +0700
+  Processing by HomeController#login as HTML
+  Parameters: {"authenticity_token"=>"jHYzSHRcTgJ0E/ks1mCzagfZgUfe8FkD36FWbtLcXHI=", "user"=>{"username"=>"batman", "password"=>"[FILTERED]"}}
+Redirected to http://localhost:3000/home/index
+Completed 302 Found in 78ms
+
+
+Started GET "/home/index" for 127.0.0.1 at 2010-09-01 15:50:40 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 10ms (Views: 9.4ms)
+
+
+Started GET "/user/create" for 127.0.0.1 at 2010-09-01 15:50:42 +0700
+  Processing by UserController#create as HTML
+Rendered user/create.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 114ms (Views: 10.6ms)
+
+
+Started POST "/user/create" for 127.0.0.1 at 2010-09-01 15:51:35 +0700
+  Processing by UserController#create as HTML
+  Parameters: {"authenticity_token"=>"jHYzSHRcTgJ0E/ks1mCzagfZgUfe8FkD36FWbtLcXHI=", "user"=>{"username"=>"phuong", "password"=>"[FILTERED]", "cfm_password"=>"[FILTERED]", "name"=>"phuong huynh", "group_id"=>"54c0da0a628c4122bc068855e93e980d", "manager_id"=>"1ce0e2f26206f833d36305b8751fc98b"}}
+Rendered user/create.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 224ms (Views: 11.4ms)
+
+
+Started GET "/home/logout" for 127.0.0.1 at 2010-09-01 15:52:43 +0700
+  Processing by HomeController#logout as HTML
+>>>>>>> ea1ce3f7d8be9e624bc075b7d4f2f438fdabdcd2
+Redirected to http://localhost:3000/home/index
+Completed 302 Found in 1ms
+
+
+<<<<<<< HEAD
 Started GET "/home/index" for 127.0.0.1 at 2010-09-01 13:36:24 +0700
   Processing by HomeController#index as HTML
 Rendered home/index.html.erb within layouts/application (1.7ms)
@@ -171,10 +731,81 @@ Completed 200 OK in 8ms (Views: 7.4ms)
 
 Started GET "/user/create" for 127.0.0.1 at 2010-09-01 13:38:24 +0700
   Processing by UserController#create as HTML
+=======
+Started GET "/home/index" for 127.0.0.1 at 2010-09-01 15:52:43 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 11ms (Views: 10.3ms)
+
+
+Started GET "/home/login" for 127.0.0.1 at 2010-09-01 15:52:44 +0700
+  Processing by HomeController#login as HTML
+Rendered home/login.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 12ms (Views: 11.2ms)
+
+
+Started POST "/home/login" for 127.0.0.1 at 2010-09-01 15:52:52 +0700
+  Processing by HomeController#login as HTML
+  Parameters: {"authenticity_token"=>"jHYzSHRcTgJ0E/ks1mCzagfZgUfe8FkD36FWbtLcXHI=", "user"=>{"username"=>"phuong", "password"=>"[FILTERED]"}}
+Redirected to http://localhost:3000/home/index
+Completed 302 Found in 115ms
+
+
+Started GET "/home/index" for 127.0.0.1 at 2010-09-01 15:52:52 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 11ms (Views: 10.3ms)
+
+
+Started GET "/user/create" for 127.0.0.1 at 2010-09-01 15:54:29 +0700
+  Processing by UserController#create as HTML
+Rendered user/create.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 126ms (Views: 10.4ms)
+
+
+Started POST "/user/create" for 127.0.0.1 at 2010-09-01 15:54:53 +0700
+  Processing by UserController#create as HTML
+  Parameters: {"authenticity_token"=>"jHYzSHRcTgJ0E/ks1mCzagfZgUfe8FkD36FWbtLcXHI=", "user"=>{"username"=>"one", "password"=>"[FILTERED]", "cfm_password"=>"[FILTERED]", "name"=>"", "group_id"=>"", "manager_id"=>""}}
+Rendered user/create.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 183ms (Views: 11.6ms)
+
+
+Started POST "/user/create" for 127.0.0.1 at 2010-09-01 15:56:21 +0700
+  Processing by UserController#create as HTML
+  Parameters: {"authenticity_token"=>"jHYzSHRcTgJ0E/ks1mCzagfZgUfe8FkD36FWbtLcXHI=", "user"=>{"username"=>"some", "password"=>"[FILTERED]", "cfm_password"=>"[FILTERED]", "name"=>"some one", "group_id"=>"", "manager_id"=>""}}
+Rendered user/create.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 215ms (Views: 12.8ms)
+
+
+Started POST "/user/create" for 127.0.0.1 at 2010-09-01 16:00:13 +0700
+  Processing by UserController#create as HTML
+  Parameters: {"authenticity_token"=>"jHYzSHRcTgJ0E/ks1mCzagfZgUfe8FkD36FWbtLcXHI=", "user"=>{"username"=>"some", "password"=>"[FILTERED]", "cfm_password"=>"[FILTERED]", "name"=>"some one", "group_id"=>"", "manager_id"=>""}}
+Rendered user/create.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 214ms (Views: 23.1ms)
+
+
+Started POST "/user/create" for 127.0.0.1 at 2010-09-01 16:00:37 +0700
+  Processing by UserController#create as HTML
+  Parameters: {"authenticity_token"=>"jHYzSHRcTgJ0E/ks1mCzagfZgUfe8FkD36FWbtLcXHI=", "user"=>{"username"=>"body", "password"=>"[FILTERED]", "cfm_password"=>"[FILTERED]", "name"=>"any body", "group_id"=>"", "manager_id"=>""}}
+Rendered user/create.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 243ms (Views: 11.9ms)
+
+
+Started POST "/user/create" for 127.0.0.1 at 2010-09-01 16:04:14 +0700
+  Processing by UserController#create as HTML
+  Parameters: {"authenticity_token"=>"jHYzSHRcTgJ0E/ks1mCzagfZgUfe8FkD36FWbtLcXHI=", "user"=>{"username"=>"lanbam", "password"=>"[FILTERED]", "cfm_password"=>"[FILTERED]", "name"=>"lanban via he", "group_id"=>"", "manager_id"=>""}}
+Rendered user/create.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 241ms (Views: 13.9ms)
+
+
+Started GET "/home/logout" for 127.0.0.1 at 2010-09-01 16:04:47 +0700
+  Processing by HomeController#logout as HTML
+>>>>>>> ea1ce3f7d8be9e624bc075b7d4f2f438fdabdcd2
 Redirected to http://localhost:3000/home/index
 Completed 302 Found in 1ms
 
 
+<<<<<<< HEAD
 Started GET "/home/index" for 127.0.0.1 at 2010-09-01 13:38:24 +0700
   Processing by HomeController#index as HTML
 Rendered home/index.html.erb within layouts/application (1.7ms)
@@ -188,11 +819,72 @@ Completed 200 OK in 9ms (Views: 8.4ms)
 
 
 Started GET "/home/logout" for 127.0.0.1 at 2010-09-01 13:38:26 +0700
+=======
+Started GET "/home/index" for 127.0.0.1 at 2010-09-01 16:04:47 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 12ms (Views: 11.7ms)
+
+
+Started GET "/user/create" for 127.0.0.1 at 2010-09-01 16:04:48 +0700
+  Processing by UserController#create as HTML
+Redirected to http://localhost:3000/home/index
+Completed 302 Found in 140ms
+
+
+Started GET "/home/index" for 127.0.0.1 at 2010-09-01 16:04:48 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 11ms (Views: 10.0ms)
+
+
+Started GET "/home/login" for 127.0.0.1 at 2010-09-01 16:04:49 +0700
+  Processing by HomeController#login as HTML
+Rendered home/login.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 10ms (Views: 9.9ms)
+
+
+Started POST "/home/login" for 127.0.0.1 at 2010-09-01 16:05:00 +0700
+  Processing by HomeController#login as HTML
+  Parameters: {"authenticity_token"=>"jHYzSHRcTgJ0E/ks1mCzagfZgUfe8FkD36FWbtLcXHI=", "user"=>{"username"=>"lanban", "password"=>"[FILTERED]"}}
+Rendered home/login.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 49ms (Views: 14.7ms)
+
+
+Started POST "/home/login" for 127.0.0.1 at 2010-09-01 16:05:13 +0700
+  Processing by HomeController#login as HTML
+  Parameters: {"authenticity_token"=>"jHYzSHRcTgJ0E/ks1mCzagfZgUfe8FkD36FWbtLcXHI=", "user"=>{"username"=>"lanban", "password"=>"[FILTERED]"}}
+Rendered home/login.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 59ms (Views: 23.9ms)
+
+
+Started POST "/home/login" for 127.0.0.1 at 2010-09-01 16:05:56 +0700
+  Processing by HomeController#login as HTML
+  Parameters: {"authenticity_token"=>"jHYzSHRcTgJ0E/ks1mCzagfZgUfe8FkD36FWbtLcXHI=", "user"=>{"username"=>"lanbam", "password"=>"[FILTERED]"}}
+Redirected to http://localhost:3000/home/index
+Completed 302 Found in 33ms
+
+
+Started GET "/home/index" for 127.0.0.1 at 2010-09-01 16:05:56 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 12ms (Views: 10.9ms)
+
+
+Started GET "/user/create" for 127.0.0.1 at 2010-09-01 16:05:58 +0700
+  Processing by UserController#create as HTML
+Rendered user/create.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 160ms (Views: 10.9ms)
+
+
+Started GET "/home/logout" for 127.0.0.1 at 2010-09-01 16:06:00 +0700
+>>>>>>> ea1ce3f7d8be9e624bc075b7d4f2f438fdabdcd2
   Processing by HomeController#logout as HTML
 Redirected to http://localhost:3000/home/index
 Completed 302 Found in 1ms
 
 
+<<<<<<< HEAD
 Started GET "/home/index" for 127.0.0.1 at 2010-09-01 13:38:26 +0700
   Processing by HomeController#index as HTML
 Rendered home/index.html.erb within layouts/application (1.6ms)
@@ -215,3 +907,88 @@ Started GET "/home/login" for 127.0.0.1 at 2010-09-01 13:39:10 +0700
   Processing by HomeController#login as HTML
 Rendered home/login.html.erb within layouts/application (3.2ms)
 Completed 200 OK in 9ms (Views: 8.6ms)
+=======
+Started GET "/home/index" for 127.0.0.1 at 2010-09-01 16:06:00 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 10ms (Views: 9.2ms)
+
+
+Started GET "/home/login" for 127.0.0.1 at 2010-09-01 16:06:01 +0700
+  Processing by HomeController#login as HTML
+Rendered home/login.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 10ms (Views: 9.5ms)
+
+
+Started GET "/user/create" for 127.0.0.1 at 2010-09-01 16:18:57 +0700
+  Processing by UserController#create as HTML
+Redirected to http://localhost:3000/home/index
+Completed 302 Found in 142ms
+
+
+Started GET "/home/index" for 127.0.0.1 at 2010-09-01 16:18:57 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 52ms (Views: 51.1ms)
+
+
+Started GET "/user/create" for 127.0.0.1 at 2010-09-01 16:19:00 +0700
+  Processing by UserController#create as HTML
+Redirected to http://localhost:3000/home/index
+Completed 302 Found in 109ms
+
+
+Started GET "/home/index" for 127.0.0.1 at 2010-09-01 16:19:01 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 9ms (Views: 8.9ms)
+
+
+Started GET "/home/logout" for 127.0.0.1 at 2010-09-01 16:19:01 +0700
+  Processing by HomeController#logout as HTML
+Redirected to http://localhost:3000/home/index
+Completed 302 Found in 1ms
+
+
+Started GET "/home/index" for 127.0.0.1 at 2010-09-01 16:19:01 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 10ms (Views: 9.4ms)
+
+
+Started GET "/user/create" for 127.0.0.1 at 2010-09-01 16:19:03 +0700
+  Processing by UserController#create as HTML
+Redirected to http://localhost:3000/home/index
+Completed 302 Found in 148ms
+
+
+Started GET "/home/index" for 127.0.0.1 at 2010-09-01 16:19:03 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 10ms (Views: 9.0ms)
+
+
+Started GET "/home/login" for 127.0.0.1 at 2010-09-01 16:19:04 +0700
+  Processing by HomeController#login as HTML
+Rendered home/login.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 10ms (Views: 9.4ms)
+
+
+Started GET "/home/index" for 127.0.0.1 at 2010-09-01 16:19:07 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 10ms (Views: 9.2ms)
+
+
+Started GET "/home/login" for 127.0.0.1 at 2010-09-01 16:19:10 +0700
+  Processing by HomeController#login as HTML
+Rendered home/login.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 10ms (Views: 9.5ms)
+
+
+Started POST "/home/login" for 127.0.0.1 at 2010-09-01 16:19:13 +0700
+  Processing by HomeController#login as HTML
+  Parameters: {"authenticity_token"=>"jHYzSHRcTgJ0E/ks1mCzagfZgUfe8FkD36FWbtLcXHI=", "user"=>{"username"=>"", "password"=>"[FILTERED]"}}
+Rendered home/login.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 37ms (Views: 9.6ms)
+>>>>>>> ea1ce3f7d8be9e624bc075b7d4f2f438fdabdcd2

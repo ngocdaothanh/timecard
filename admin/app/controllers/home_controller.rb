@@ -7,7 +7,6 @@ class HomeController < ApplicationController
     session['is_authenticated'] = nil
     session['user_name'] = nil
     session['user_id'] = nil
-    session['group_name'] = nil
     session['group_id'] = nil
     session['is_admin'] = nil
     go_home
@@ -16,20 +15,18 @@ class HomeController < ApplicationController
   def login
     if request.post?
       # authenticate
-      @result = 'authenticated'
+      @users = User.find_all_by_username_and_encrypted_password(params[:user][:username], get_encrypt(params[:user][:password]))
 
-      session['is_authenticated'] = @result
-
-      if(authenticate)
-        session['is_authenticated'] = ''
-        session['user_name'] = params[:employee][:user_name]
-        session['user_id'] = ''
-        session['group_name'] = ''
-        session['group_id'] = ''
+      if @users.length == 0
+        @message = "Username and password are not matching!"
+      else
+        @user = @users[0]
+        session['is_authenticated'] = 'authenticated'
+        session['user_name'] = @user.username
+        session['user_id'] = @user.id
+        session['group_id'] = @user.group_id
         session['is_admin'] = true
         go_home
-      else
-        @message = "Username and password are not matching!"
       end
     end
   end
