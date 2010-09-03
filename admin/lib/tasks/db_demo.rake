@@ -32,6 +32,7 @@ namespace :db do
                :out_at => Time.now,
                :return_at => Time.now,
                :leave_at => Time.now,
+             #  :tcexception => exception,
                :tcexception_id => exception.id,
                :notes => "Example notes",
                :user => user)
