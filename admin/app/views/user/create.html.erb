@@ -4,68 +4,8 @@
 %>
 
 <h2>Register an user account</h2>
+
 <%# form_tag({:controller => "people", :action => "search"}, :method => "post") %>
 <%= form_tag("/user/create", :method => "post") do %>
-  <table>
-    <tr>
-      <td>User name:</td>
-      <td>
-        <input type="text" id="username" name="user[username]" />
-      </td>
-    </tr>
-    <tr>
-      <td>Password:</td>
-      <td>
-        <input type="password" id="password" name="user[password]" />
-      </td>
-    </tr>
-    <tr>
-      <td>Confirm password:</td>
-      <td>
-        <input type="password" id="cfm_password" name="user[cfm_password]" />
-      </td>
-    </tr>
-    <tr>
-      <td>Full name:</td>
-      <td>
-        <input type="text" id="name" name="user[name]" />
-      </td>
-    </tr>
-    <tr>
-      <td>Group name:</td>
-      <td>
-        <select id="group_id" name="user[group_id]">
-          <option value="">None</option>
-          <% @groups.each do |group| %>
-            <option value="<%=group.id%>"><%=group.name%></option>
-          <%end%>
-        </select>
-      </td>
-    </tr>
-    <tr>
-      <td>Manager:</td>
-      <td>
-        <select id="manager_id" name="user[manager_id]">
-          <option value="">None</option>
-          <% @users.each do |user| %>
-            <option value="<%=user.id%>"><%=user.username%></option>
-          <%end%>
-        </select>
-      </td>
-    </tr>
-    <tr>
-      <td>Disabled:</td>
-      <td>
-        <input type="checkbox" id="disabled" name="user[disabled]"/>
-      </td>
-    </tr>
-    <tr>
-      <td colspan="2">
-        <input type="submit" value="Submit" />
-        <input type="button" value="Cancel" onclick="document.location='/home/index'" />
-      </td>
-    </tr>
-  </table>
-  <br /><br />
-  <span style="color: red"><%= @message %></span>
+  <%= render 'form' %>
 <% end %>

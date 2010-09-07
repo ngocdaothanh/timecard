@@ -3,4 +3,9 @@
 # and open the template in the editor.
 %>
 
-<%= "edit.html" %>
+<h2>Edit user account</h2>
+
+<%# form_tag({:controller => "people", :action => "search"}, :method => "post") %>
+<%= form_tag("/user/edit", :method => "post") do %>
+  <%= render 'form' %>
+<% end %>
