@@ -4,11 +4,7 @@ class HomeController < ApplicationController
   end
 
   def logout
-    session['is_authenticated'] = nil
-    session['user_name'] = nil
-    session['user_id'] = nil
-    session['group_id'] = nil
-    session['is_admin'] = nil
+    reset_session
     go_home
   end
 

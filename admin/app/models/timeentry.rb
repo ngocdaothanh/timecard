@@ -10,4 +10,6 @@ class Timeentry
   property :tcexception_id
   
   belongs_to :user
+
+  attr_accessor :exception
 end

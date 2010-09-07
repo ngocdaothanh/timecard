@@ -27,15 +27,20 @@ namespace :db do
         puts "-- User id : #{user.id}"
 
         # TimeEntry
-        Timeentry.create(:date => Date.new(2010,10,05), 
-               :arrive_at => Time.now,
-               :out_at => Time.now,
-               :return_at => Time.now,
-               :leave_at => Time.now,
+        d_now = Date.new(2010, 9, 6)
+        t_now = Time.now
+        3.times do |t|
+          Timeentry.create(:date => d_now + t,
+               :arrive_at => t_now,
+               :out_at => t_now + 3600*2,
+               :return_at =>t_now + 3600*3,
+               :leave_at => t_now + 3600*4,
              #  :tcexception => exception,
                :tcexception_id => exception.id,
                :notes => "Example notes",
                :user => user)
+        end
+        
       end
     end
   end

@@ -1,4 +1,4 @@
-class UserController < ApplicationController
++class UserController < ApplicationController
   def create
     # only administrator allows create an user account
     if not session['is_admin']

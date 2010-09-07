@@ -1,5 +1,9 @@
 Admin::Application.routes.draw do
+  get "timeentries/index"
   get 'home/index'
+
+  post "timeentries/tableedit"
+
   match 'home/login' => 'home#login'
   match 'home/logout' => 'home#logout'
   match 'user/create' => 'user#create'
