@@ -1,7 +1,7 @@
 class UserController < ApplicationController
   def index
     if authenticate
-      @users = User.all
+      @users = User.find_all_by_disabled(false)
     else
       must_login
     end
@@ -15,12 +15,14 @@ class UserController < ApplicationController
 
     @groups = Group.all
     @users = User.all
+    @user = User.new
 
     if request.post?
       if params[:user][:password] == params[:user][:cfm_password]
         User.create(:username     => params[:user][:username],
                     :name         => params[:user][:name],
                     :password     => params[:user][:password],
+                    :disabled     => false,
                     :group_id     => params[:user][:group_id] == ""? nil : params[:user][:group_id],
                     :manager_id   => params[:user][:manager_id] == ""? nil : params[:user][:manager_id])
       else
@@ -43,15 +45,13 @@ class UserController < ApplicationController
                   :manager_id  => params[:user][:manager_id],
                   :disabled    => params[:user][:disabled])
             else
-              puts "Truoc khi cap nhat : encrypt #{@user.encrypted_password}"
               @user.update_attributes(
                   :username  => params[:user][:username],
-                  :password  => params[:user][:password],
+                  :encrypted_password  => get_encrypt(params[:user][:password]),
                   :name      => params[:user][:name],
                   :group_id  => params[:user][:group_id],
                   :manager_id  => params[:user][:manager_id],
                   :disabled    => params[:user][:disabled])
-               puts "Sau khi cap nhat : encrypt #{@user.encrypted_password}"
             end
             redirect_to user_index_path
           else
@@ -64,7 +64,7 @@ class UserController < ApplicationController
             @user = User.find(params[:user][:id])
             if params[:user][:password] == params[:user][:cfm_password]
               if params[:user][:password] != ''
-                @user.update_attributes(:password => params[:user][:password])
+                @user.update_attributes(:encrypted_password  => get_encrypt(params[:user][:password]))
               end
               redirect_to user_index_path
             else
@@ -97,7 +97,7 @@ class UserController < ApplicationController
       @user = User.find(params[:id])
       if @user.nil?
       else
-        @user.destroy
+        @user.update_attributes(:disabled  => true)
       end
       @message = ''
     else
