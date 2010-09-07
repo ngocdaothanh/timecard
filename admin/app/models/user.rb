@@ -26,7 +26,7 @@ class User
 
   private
     def encrypt_password
-      self.encrypted_password = secure_hash(password) if self.encrypted_password.nil?
+      self.encrypted_password = secure_hash(password) unless password.nil?
     end
 
     def secure_hash(string)

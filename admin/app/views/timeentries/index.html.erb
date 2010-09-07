@@ -35,7 +35,7 @@
         <%end%>
       </tbody>
     </table>
-    <input type="button" value="Export CSV"/>
+    <input type="button" value="Export CSV" onclick="document.location = '/csv/download?id=<%=@user.id %>'"/>
 
   </body>
 
