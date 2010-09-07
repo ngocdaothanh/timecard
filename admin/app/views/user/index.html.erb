@@ -1,0 +1,22 @@
+ <span style="color: red; font-size: small"><%= @message %></span>
+ 
+<table style="font-size:smaller">
+  <tr>
+    <th>Name</th>
+    <th>Username</th>
+    <th>Group</th>
+    <th>Manager</th>
+    <th>Action</th>
+  </tr>
+  <% @users.each do |user| %>
+  <tr>
+    <td><%= user.name %></td>
+    <td><%= user.username %></td>
+    <td><%= user.group_id %></td>
+    <td><%= user.manager_id %></td>
+    <td>
+      <a href="/user/edit?id=<%= user.id %>">edit</a> <a href="/user/delete?id=<%= user.id %>">delete</a> <a href="">diligence</a>
+    </td>
+  </tr>
+  <% end %>
+</table>

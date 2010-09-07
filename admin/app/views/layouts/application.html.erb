@@ -11,11 +11,24 @@
   <table width="100%">
     <tr>
       <td style="text-align: right">
+        <% if session['is_admin'] %> administrator <% end %>
         <%= session['user_name'] %>| <a href="/home/login">Login</a> | <a href="/home/logout">Logout</a> | <a href="/user/create">Create User</a> |
       </td>
     </tr>
   </table>
   <h1></h1>
-  <%= yield %>
+  <table width="100%">
+    <tr>
+      <td style="vertical-align: top ; width: 15%; background-color: #eeeeee; padding: 10px">
+        <a href="/user/index">Users</a>
+      </td>
+      <td style="vertical-align: top; padding: 10px">
+        <%= yield %>
+      </td>
+      <td style="vertical-align: top; width: 15%; background-color: #eeeeee; padding: 10px">
+
+      </td>
+    </tr>
+  </table>
 </body>
 </html>

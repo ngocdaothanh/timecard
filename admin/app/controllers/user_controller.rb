@@ -1,4 +1,12 @@
-+class UserController < ApplicationController
+class UserController < ApplicationController
+  def index
+    if authenticate
+      @users = User.all
+    else
+      must_login
+    end
+  end
+
   def create
     # only administrator allows create an user account
     if not session['is_admin']
@@ -19,5 +27,32 @@
         @message = 'password and confirm password are not matching!'
       end
     end
+  end
+
+  def edit
+    if is_admin_
+      @user = User.find(params[:id])
+      if @user.nil?
+      else
+
+      end
+      @message = ''
+    else
+      @message = 'Only administrator has deleted permisson'
+    end
+  end
+
+  def delete
+    if is_admin_
+      @user = User.find(params[:id])
+      if @user.nil?
+      else
+        @user.destroy
+      end
+      @message = ''
+    else
+      @message = 'Only administrator has deleted permisson'
+    end
+    redirect_to :controller => 'user', :action => 'index'
   end
 end

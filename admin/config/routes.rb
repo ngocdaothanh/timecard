@@ -8,6 +8,10 @@ Admin::Application.routes.draw do
   match 'home/logout' => 'home#logout'
   match 'user/create' => 'user#create'
 
+  match 'user/index'  => 'user#index'
+  match 'user/edit'  => 'user#edit'
+  match 'user/delete'  => 'user#delete'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

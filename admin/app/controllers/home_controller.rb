@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   def index
-    
+
   end
 
   def logout
@@ -21,9 +21,10 @@ class HomeController < ApplicationController
         session['user_name'] = @user.username
         session['user_id'] = @user.id
         session['group_id'] = @user.group_id
-        session['is_admin'] = true
+        session['is_admin'] = is_admin(@user.username)
         go_home
       end
     end
   end
+
 end
