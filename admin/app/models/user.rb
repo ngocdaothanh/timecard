@@ -17,7 +17,7 @@ class User
   validates_presence_of :username, :name
 
   def manager_name
-    puts 'TTTTTTT #{ self.manager_id}' +
+    #puts 'TTTTTTT #{self.manager_id}'
     User.find(self.manager_id).name unless self.manager_id.nil?
   end
 

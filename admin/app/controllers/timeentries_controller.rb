@@ -20,8 +20,14 @@ class TimeentriesController < ApplicationController
 
     unless (oldValue == newValue)
       timeentry = Timeentry.find( params[:id] )
-      tz = Time.zone.parse(newValue)
-      timeentry.update_attributes(colName => newValue)
+      if (colName == 'arrive_at' || colName == 'out_at' || colName == 'return_at' ||
+            colName == 'leave_at')
+        tz = Time.zone.parse(newValue)
+        timeentry.update_attributes(colName => tz.utc)
+      else
+        timeentry.update_attributes(colName => newValue)
+      end
+      
       # "id"=>"e897765e5e7b8d916703a673b95bedda",
       # "oldValue"=>"2010-09-06 07:01:59 UTC", "newValue"=>"2010-09-06 07:01:59 UTC",
       # "colName"=>":arrive_at", "controller"=>"timeentries", "action"=>"tableedit"
