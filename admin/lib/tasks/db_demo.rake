@@ -11,14 +11,18 @@ namespace :db do
 
     exception = Tcexception.find_by_value("tau tre")
 
+    user_num = 0
+
+
     groupnames = ["Game", "RD"]
     groupnames.each do |gn|
       g = Group.create(:name => gn)
 
       puts "Group id : #{g.id}"
 
-      1.times do |n|
-        username = "user#{n+1}"
+      2.times do |n|
+        user_num += 1
+        username = "user#{user_num}"
         user = User.create!(:username => username,
           :name => Faker::Name.name,
           :password =>"a",
@@ -27,21 +31,27 @@ namespace :db do
         puts "-- User id : #{user.id}"
 
         # TimeEntry
-        d_now = Date.new(2010, 9, 6)
+        puts "Trong db_demo ------ Time zone : #{Time.zone}"
+        d_now = Date.new(2010, 9, 7)
         t_now = Time.now
         3.times do |t|
-          Timeentry.create(:date => d_now + t,
+          t = Timeentry.create(:date => d_now + t,
                :arrive_at => t_now,
-               :out_at => t_now + 3600*2,
-               :return_at =>t_now + 3600*3,
-               :leave_at => t_now + 3600*4,
+               :out_at => t_now + 3600,
+               :return_at =>t_now + 3600*2,
+               :leave_at => t_now + 3600*3,
              #  :tcexception => exception,
                :tcexception_id => exception.id,
                :notes => "Example notes",
                :user => user)
+             puts t.inspect
         end
-        
       end
+      #user2 is manager of user1
+      user2 = User.find_by_username('user2')
+      user1 = User.find_by_username('user1')
+      user1.manager_id = user2.id
+      user1.save
     end
   end
 end

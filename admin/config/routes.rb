@@ -1,5 +1,7 @@
 Admin::Application.routes.draw do
+  #match "timeentries/index(/:id)" => "timeentries#index"
   get "timeentries/index"
+  
   get 'home/index'
 
   post "timeentries/tableedit"

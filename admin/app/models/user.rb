@@ -14,7 +14,7 @@ class User
   attr_accessor :password
 #  attr_accessible :username, :name , :manager_id, :disabled, :password, :group
 
-  validates_presence_of :username, :name, :password
+  validates_presence_of :username, :name
 
   def manager_name
     puts 'TTTTTTT #{ self.manager_id}' +
@@ -26,7 +26,7 @@ class User
 
   private
     def encrypt_password
-      self.encrypted_password = secure_hash(password)
+      self.encrypted_password = secure_hash(password) if self.encrypted_password.nil?
     end
 
     def secure_hash(string)

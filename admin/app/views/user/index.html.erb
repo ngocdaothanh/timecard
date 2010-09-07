@@ -15,7 +15,8 @@
     <td><%= user.group_id %></td>
     <td><%= user.manager_id %></td>
     <td>
-      <a href="/user/edit?id=<%= user.id %>">edit</a> <a href="/user/delete?id=<%= user.id %>">delete</a> <a href="">diligence</a>
+      <a href="/user/edit?id=<%= user.id %>">edit</a> <a href="/user/delete?id=<%= user.id %>">delete</a>
+      <a href="/timeentries/index?id=<%= user.id %>">diligence</a>
     </td>
   </tr>
   <% end %>

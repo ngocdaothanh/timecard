@@ -2209,3 +2209,931 @@ Started GET "/user/index" for 127.0.0.1 at 2010-09-07 09:13:27 +0700
   Processing by UserController#index as HTML
 Rendered user/index.html.erb within layouts/application (4.5ms)
 Completed 200 OK in 37ms (Views: 10.9ms)
+
+
+Started GET "/user/index" for 127.0.0.1 at 2010-09-07 09:40:15 +0700
+  Processing by UserController#index as HTML
+Rendered user/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 48ms (Views: 12.2ms)
+
+
+Started GET "/user/index" for 127.0.0.1 at 2010-09-07 09:44:50 +0700
+  Processing by UserController#index as HTML
+Rendered user/index.html.erb within layouts/application (57.9ms)
+Completed   in 96ms
+
+ActionView::Template::Error (undefined local variable or method `timeentries_index' for #<#<Class:0x9563638>:0x95624f4>):
+    16:     <td><%= user.manager_id %></td>
+    17:     <td>
+    18:       <a href="/user/edit?id=<%= user.id %>">edit</a> <a href="/user/delete?id=<%= user.id %>">delete</a>
+    19:       <%link_to timeentries_index %>
+    20:       <a href="">diligence</a>
+    21:     </td>
+    22:   </tr>
+  app/views/user/index.html.erb:19:in `block in _app_views_user_index_html_erb___166887198_78312310__525365762'
+  app/views/user/index.html.erb:11:in `each'
+  app/views/user/index.html.erb:11:in `_app_views_user_index_html_erb___166887198_78312310__525365762'
+
+Rendered /home/lantra/.rvm/gems/ruby-1.9.2-head/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.9ms)
+Rendered /home/lantra/.rvm/gems/ruby-1.9.2-head/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (6.0ms)
+Rendered /home/lantra/.rvm/gems/ruby-1.9.2-head/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (14.1ms)
+
+
+Started GET "/user/index" for 127.0.0.1 at 2010-09-07 09:44:59 +0700
+  Processing by UserController#index as HTML
+Rendered user/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 41ms (Views: 11.0ms)
+
+
+Started GET "/user/index" for 127.0.0.1 at 2010-09-07 09:46:09 +0700
+  Processing by UserController#index as HTML
+Rendered user/index.html.erb within layouts/application (11.2ms)
+Completed 200 OK in 45ms (Views: 18.2ms)
+
+
+Started GET "/timeentries/index" for 127.0.0.1 at 2010-09-07 09:46:12 +0700
+  Processing by TimeentriesController#index as HTML
+Rendered timeentries/index.html.erb within layouts/application (46.3ms)
+Completed   in 437ms
+
+ActionView::Template::Error (undefined method `isManagerOf' for #<#<Class:0x9796c5c>:0x9795c44>):
+    6:     <p>Full Name : <%=@user.name %> </p>
+    7:     <p>Group Name : <%=@user.group.name %> </p>
+    8:     <p>Manager : <%=@user.manager_name %> </p>
+    9:     <input type="hidden" id="isManager" value="<%=isManagerOf(@user)%>"/>
+    10: 
+    11:     <table id="tablesorter-demo" class="tablesorter" border="0" cellpadding="0" cellspacing="1">
+    12:       <thead>
+  app/views/timeentries/index.html.erb:9:in `_app_views_timeentries_index_html_erb__471866991_79472690__525365762'
+
+Rendered /home/lantra/.rvm/gems/ruby-1.9.2-head/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.9ms)
+Rendered /home/lantra/.rvm/gems/ruby-1.9.2-head/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (6.9ms)
+Rendered /home/lantra/.rvm/gems/ruby-1.9.2-head/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (15.6ms)
+
+
+Started GET "/timeentries/index" for 127.0.0.1 at 2010-09-07 09:51:19 +0700
+  Processing by TimeentriesController#index as HTML
+Rendered timeentries/index.html.erb within layouts/application (82.2ms)
+Completed   in 223ms
+
+ActionView::Template::Error (undefined method `isManagerOf' for #<#<Class:0x8e026c8>:0x8decb34>):
+    6:     <p>Full Name : <%=@user.name %> </p>
+    7:     <p>Group Name : <%=@user.group.name %> </p>
+    8:     <p>Manager : <%=@user.manager_name %> </p>
+    9:     <input type="hidden" id="isManager" value="<%=isManagerOf(@user)%>"/>
+    10: 
+    11:     <table id="tablesorter-demo" class="tablesorter" border="0" cellpadding="0" cellspacing="1">
+    12:       <thead>
+  app/views/timeentries/index.html.erb:9:in `_app_views_timeentries_index_html_erb__471866991_74387490__525365762'
+
+Rendered /home/lantra/.rvm/gems/ruby-1.9.2-head/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+Rendered /home/lantra/.rvm/gems/ruby-1.9.2-head/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (6.8ms)
+Rendered /home/lantra/.rvm/gems/ruby-1.9.2-head/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (14.2ms)
+
+
+Started GET "/user/index" for 127.0.0.1 at 2010-09-07 09:51:22 +0700
+  Processing by UserController#index as HTML
+Rendered user/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 36ms (Views: 9.9ms)
+
+
+Started GET "/timeentries/index.e897765e5e7b8d916703a673b95bf540" for 127.0.0.1 at 2010-09-07 09:51:27 +0700
+  Processing by TimeentriesController#index as 
+Rendered timeentries/index.html.erb within layouts/application (77.4ms)
+Completed   in 188ms
+
+ActionView::Template::Error (undefined method `isManagerOf' for #<#<Class:0x8c5fbf4>:0x8c546b4>):
+    6:     <p>Full Name : <%=@user.name %> </p>
+    7:     <p>Group Name : <%=@user.group.name %> </p>
+    8:     <p>Manager : <%=@user.manager_name %> </p>
+    9:     <input type="hidden" id="isManager" value="<%=isManagerOf(@user)%>"/>
+    10: 
+    11:     <table id="tablesorter-demo" class="tablesorter" border="0" cellpadding="0" cellspacing="1">
+    12:       <thead>
+  app/views/timeentries/index.html.erb:9:in `_app_views_timeentries_index_html_erb__471866991_73568810__525365762'
+
+Rendered /home/lantra/.rvm/gems/ruby-1.9.2-head/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.9ms)
+Rendered /home/lantra/.rvm/gems/ruby-1.9.2-head/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (6.9ms)
+Rendered /home/lantra/.rvm/gems/ruby-1.9.2-head/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (14.6ms)
+
+
+Started GET "/user/index" for 127.0.0.1 at 2010-09-07 09:54:26 +0700
+  Processing by UserController#index as HTML
+Rendered user/index.html.erb within layouts/application (41.7ms)
+Completed   in 196ms
+
+ActionView::Template::Error (undefined method `timeentries_index_path' for #<#<Class:0x9fab050>:0x9fa5128>):
+    16:     <td><%= user.manager_id %></td>
+    17:     <td>
+    18:       <a href="/user/edit?id=<%= user.id %>">edit</a> <a href="/user/delete?id=<%= user.id %>">delete</a>
+    19:       <%= link_to "About", timeentries_index_path(user) %>
+    20:       <a href="">diligence</a>
+    21:     </td>
+    22:   </tr>
+  app/views/user/index.html.erb:19:in `block in _app_views_user_index_html_erb___569601084_83698660__1043191615'
+  app/views/user/index.html.erb:11:in `each'
+  app/views/user/index.html.erb:11:in `_app_views_user_index_html_erb___569601084_83698660__1043191615'
+
+Rendered /home/lantra/.rvm/gems/ruby-1.9.2-head/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.9ms)
+Rendered /home/lantra/.rvm/gems/ruby-1.9.2-head/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (35.4ms)
+Rendered /home/lantra/.rvm/gems/ruby-1.9.2-head/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (43.0ms)
+
+
+Started GET "/user/index" for 127.0.0.1 at 2010-09-07 09:58:17 +0700
+  Processing by UserController#index as HTML
+Rendered user/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 99ms (Views: 12.6ms)
+
+
+Started GET "/timeentries/index?id=e897765e5e7b8d916703a673b95bf540" for 127.0.0.1 at 2010-09-07 09:58:28 +0700
+  Processing by TimeentriesController#index as HTML
+  Parameters: {"id"=>"e897765e5e7b8d916703a673b95bf540"}
+Rendered timeentries/index.html.erb within layouts/application (68.2ms)
+Completed   in 164ms
+
+ActionView::Template::Error (undefined method `isManagerOf' for #<#<Class:0xa16fcd8>:0xa16ec48>):
+    6:     <p>Full Name : <%=@user.name %> </p>
+    7:     <p>Group Name : <%=@user.group.name %> </p>
+    8:     <p>Manager : <%=@user.manager_name %> </p>
+    9:     <input type="hidden" id="isManager" value="<%=isManagerOf(@user)%>"/>
+    10: 
+    11:     <table id="tablesorter-demo" class="tablesorter" border="0" cellpadding="0" cellspacing="1">
+    12:       <thead>
+  app/views/timeentries/index.html.erb:9:in `_app_views_timeentries_index_html_erb__981202705_84597400__99703302'
+
+Rendered /home/lantra/.rvm/gems/ruby-1.9.2-head/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.8ms)
+Rendered /home/lantra/.rvm/gems/ruby-1.9.2-head/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (7.2ms)
+Rendered /home/lantra/.rvm/gems/ruby-1.9.2-head/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (14.8ms)
+
+
+Started GET "/timeentries/index?id=e897765e5e7b8d916703a673b95bf540" for 127.0.0.1 at 2010-09-07 09:59:29 +0700
+  Processing by TimeentriesController#index as HTML
+  Parameters: {"id"=>"e897765e5e7b8d916703a673b95bf540"}
+Rendered timeentries/index.html.erb within layouts/application (58.5ms)
+Completed   in 205ms
+
+ActionView::Template::Error (undefined method `isManagerOf' for #<#<Class:0xa24886c>:0xa24796c>):
+    6:     <p>Full Name : <%=@user.name %> </p>
+    7:     <p>Group Name : <%=@user.group.name %> </p>
+    8:     <p>Manager : <%=@user.manager_name %> </p>
+    9:     <input type="hidden" id="isManager" value="<%=isManagerOf(@user)%>"/>
+    10: 
+    11:     <table id="tablesorter-demo" class="tablesorter" border="0" cellpadding="0" cellspacing="1">
+    12:       <thead>
+  app/views/timeentries/index.html.erb:9:in `_app_views_timeentries_index_html_erb__981202705_85079810__99703302'
+
+Rendered /home/lantra/.rvm/gems/ruby-1.9.2-head/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+Rendered /home/lantra/.rvm/gems/ruby-1.9.2-head/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (7.1ms)
+Rendered /home/lantra/.rvm/gems/ruby-1.9.2-head/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (14.3ms)
+
+
+Started GET "/timeentries/index?id=e897765e5e7b8d916703a673b95bf540" for 127.0.0.1 at 2010-09-07 10:08:00 +0700
+  Processing by TimeentriesController#index as HTML
+  Parameters: {"id"=>"e897765e5e7b8d916703a673b95bf540"}
+Rendered timeentries/index.html.erb within layouts/application (31.0ms)
+Completed   in 127ms
+
+ActionView::Template::Error (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id):
+    6:     <p>Full Name : <%=@user.name %> </p>
+    7:     <p>Group Name : <%=@user.group.name %> </p>
+    8:     <p>Manager : <%=@user.manager_name %> </p>
+    9:     <input type="hidden" id="isManager" value="<%=isManagerOf(@user)%>"/>
+    10: 
+    11:     <table id="tablesorter-demo" class="tablesorter" border="0" cellpadding="0" cellspacing="1">
+    12:       <thead>
+  app/helpers/timeentries_helper.rb:8:in `isManagerOf'
+  app/views/timeentries/index.html.erb:9:in `_app_views_timeentries_index_html_erb__981202705_78890070__99703302'
+
+Rendered /home/lantra/.rvm/gems/ruby-1.9.2-head/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.8ms)
+Rendered /home/lantra/.rvm/gems/ruby-1.9.2-head/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (7.9ms)
+Rendered /home/lantra/.rvm/gems/ruby-1.9.2-head/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (16.4ms)
+
+
+Started GET "/timeentries/index?id=e897765e5e7b8d916703a673b95bf540" for 127.0.0.1 at 2010-09-07 10:09:01 +0700
+  Processing by TimeentriesController#index as HTML
+  Parameters: {"id"=>"e897765e5e7b8d916703a673b95bf540"}
+Rendered timeentries/index.html.erb within layouts/application (29.3ms)
+Completed   in 134ms
+
+ActionView::Template::Error (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id):
+    6:     <p>Full Name : <%=@user.name %> </p>
+    7:     <p>Group Name : <%=@user.group.name %> </p>
+    8:     <p>Manager : <%=@user.manager_name %> </p>
+    9:     <input type="hidden" id="isManager" value="<%=isManagerOf(@user)%>"/>
+    10: 
+    11:     <table id="tablesorter-demo" class="tablesorter" border="0" cellpadding="0" cellspacing="1">
+    12:       <thead>
+  app/helpers/timeentries_helper.rb:9:in `isManagerOf'
+  app/views/timeentries/index.html.erb:9:in `_app_views_timeentries_index_html_erb__981202705_84295810__99703302'
+
+Rendered /home/lantra/.rvm/gems/ruby-1.9.2-head/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.3ms)
+Rendered /home/lantra/.rvm/gems/ruby-1.9.2-head/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (8.6ms)
+Rendered /home/lantra/.rvm/gems/ruby-1.9.2-head/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (17.8ms)
+
+
+Started GET "/timeentries/index?id=e897765e5e7b8d916703a673b95bf540" for 127.0.0.1 at 2010-09-07 10:11:50 +0700
+  Processing by TimeentriesController#index as HTML
+  Parameters: {"id"=>"e897765e5e7b8d916703a673b95bf540"}
+Rendered timeentries/index.html.erb within layouts/application (27.8ms)
+Completed   in 152ms
+
+ActionView::Template::Error (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id):
+    6:     <p>Full Name : <%=@user.name %> </p>
+    7:     <p>Group Name : <%=@user.group.name %> </p>
+    8:     <p>Manager : <%=@user.manager_name %> </p>
+    9:     <input type="hidden" id="isManager" value="<%=isManagerOf(@user)%>"/>
+    10: 
+    11:     <table id="tablesorter-demo" class="tablesorter" border="0" cellpadding="0" cellspacing="1">
+    12:       <thead>
+  app/helpers/timeentries_helper.rb:10:in `isManagerOf'
+  app/views/timeentries/index.html.erb:9:in `_app_views_timeentries_index_html_erb__981202705_85200280__99703302'
+
+Rendered /home/lantra/.rvm/gems/ruby-1.9.2-head/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.9ms)
+Rendered /home/lantra/.rvm/gems/ruby-1.9.2-head/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (8.1ms)
+Rendered /home/lantra/.rvm/gems/ruby-1.9.2-head/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (16.1ms)
+
+
+Started GET "/timeentries/index?id=e897765e5e7b8d916703a673b95bf540" for 127.0.0.1 at 2010-09-07 10:12:35 +0700
+  Processing by TimeentriesController#index as HTML
+  Parameters: {"id"=>"e897765e5e7b8d916703a673b95bf540"}
+Rendered timeentries/index.html.erb within layouts/application (52.6ms)
+Completed   in 210ms
+
+ActionView::Template::Error (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id):
+    6:     <p>Full Name : <%=@user.name %> </p>
+    7:     <p>Group Name : <%=@user.group.name %> </p>
+    8:     <p>Manager : <%=@user.manager_name %> </p>
+    9:     <input type="hidden" id="isManager" value="<%=isManagerOf(@user)%>"/>
+    10: 
+    11:     <table id="tablesorter-demo" class="tablesorter" border="0" cellpadding="0" cellspacing="1">
+    12:       <thead>
+  app/helpers/timeentries_helper.rb:11:in `isManagerOf'
+  app/views/timeentries/index.html.erb:9:in `_app_views_timeentries_index_html_erb__928549071_83435090_754369398'
+
+Rendered /home/lantra/.rvm/gems/ruby-1.9.2-head/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.2ms)
+Rendered /home/lantra/.rvm/gems/ruby-1.9.2-head/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (40.7ms)
+Rendered /home/lantra/.rvm/gems/ruby-1.9.2-head/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (48.8ms)
+
+
+Started GET "/timeentries/index?id=e897765e5e7b8d916703a673b95bf540" for 127.0.0.1 at 2010-09-07 10:16:19 +0700
+  Processing by TimeentriesController#index as HTML
+  Parameters: {"id"=>"e897765e5e7b8d916703a673b95bf540"}
+Rendered timeentries/index.html.erb within layouts/application (31.4ms)
+Completed   in 125ms
+
+ActionView::Template::Error (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id):
+    6:     <p>Full Name : <%=@user.name %> </p>
+    7:     <p>Group Name : <%=@user.group.name %> </p>
+    8:     <p>Manager : <%=@user.manager_name %> </p>
+    9:     <input type="hidden" id="isManager" value="<%=isManagerOf(@user)%>"/>
+    10: 
+    11:     <table id="tablesorter-demo" class="tablesorter" border="0" cellpadding="0" cellspacing="1">
+    12:       <thead>
+  app/helpers/timeentries_helper.rb:13:in `isManagerOf'
+  app/views/timeentries/index.html.erb:9:in `_app_views_timeentries_index_html_erb__928549071_89209580_754369398'
+
+Rendered /home/lantra/.rvm/gems/ruby-1.9.2-head/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.1ms)
+Rendered /home/lantra/.rvm/gems/ruby-1.9.2-head/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (8.9ms)
+Rendered /home/lantra/.rvm/gems/ruby-1.9.2-head/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (18.2ms)
+
+
+Started GET "/timeentries/index?id=e897765e5e7b8d916703a673b95bf540" for 127.0.0.1 at 2010-09-07 10:16:25 +0700
+  Processing by TimeentriesController#index as HTML
+  Parameters: {"id"=>"e897765e5e7b8d916703a673b95bf540"}
+Rendered timeentries/index.html.erb within layouts/application (25.3ms)
+Completed   in 197ms
+
+ActionView::Template::Error (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id):
+    6:     <p>Full Name : <%=@user.name %> </p>
+    7:     <p>Group Name : <%=@user.group.name %> </p>
+    8:     <p>Manager : <%=@user.manager_name %> </p>
+    9:     <input type="hidden" id="isManager" value="<%=isManagerOf(@user)%>"/>
+    10: 
+    11:     <table id="tablesorter-demo" class="tablesorter" border="0" cellpadding="0" cellspacing="1">
+    12:       <thead>
+  app/helpers/timeentries_helper.rb:13:in `isManagerOf'
+  app/views/timeentries/index.html.erb:9:in `_app_views_timeentries_index_html_erb__928549071_86072430_754369398'
+
+Rendered /home/lantra/.rvm/gems/ruby-1.9.2-head/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.8ms)
+Rendered /home/lantra/.rvm/gems/ruby-1.9.2-head/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (7.8ms)
+Rendered /home/lantra/.rvm/gems/ruby-1.9.2-head/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (17.6ms)
+
+
+Started GET "/timeentries/index?id=e897765e5e7b8d916703a673b95bf540" for 127.0.0.1 at 2010-09-07 10:16:50 +0700
+  Processing by TimeentriesController#index as HTML
+  Parameters: {"id"=>"e897765e5e7b8d916703a673b95bf540"}
+Rendered timeentries/index.html.erb within layouts/application (24.8ms)
+Completed   in 109ms
+
+ActionView::Template::Error (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id):
+    6:     <p>Full Name : <%=@user.name %> </p>
+    7:     <p>Group Name : <%=@user.group.name %> </p>
+    8:     <p>Manager : <%=@user.manager_name %> </p>
+    9:     <input type="hidden" id="isManager" value="<%=isManagerOf(@user)%>"/>
+    10: 
+    11:     <table id="tablesorter-demo" class="tablesorter" border="0" cellpadding="0" cellspacing="1">
+    12:       <thead>
+  app/helpers/timeentries_helper.rb:13:in `isManagerOf'
+  app/views/timeentries/index.html.erb:9:in `_app_views_timeentries_index_html_erb__928549071_88714470_754369398'
+
+Rendered /home/lantra/.rvm/gems/ruby-1.9.2-head/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.9ms)
+Rendered /home/lantra/.rvm/gems/ruby-1.9.2-head/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (7.5ms)
+Rendered /home/lantra/.rvm/gems/ruby-1.9.2-head/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (15.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-09-07 10:17:33 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 9ms (Views: 8.6ms)
+
+
+Started GET "/user/index" for 127.0.0.1 at 2010-09-07 10:17:36 +0700
+  Processing by UserController#index as HTML
+Rendered user/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 140ms (Views: 13.0ms)
+
+
+Started GET "/timeentries/index?id=e897765e5e7b8d916703a673b95bf540" for 127.0.0.1 at 2010-09-07 10:17:41 +0700
+  Processing by TimeentriesController#index as HTML
+  Parameters: {"id"=>"e897765e5e7b8d916703a673b95bf540"}
+Rendered timeentries/index.html.erb within layouts/application (55.5ms)
+Completed   in 164ms
+
+ActionView::Template::Error (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id):
+    6:     <p>Full Name : <%=@user.name %> </p>
+    7:     <p>Group Name : <%=@user.group.name %> </p>
+    8:     <p>Manager : <%=@user.manager_name %> </p>
+    9:     <input type="hidden" id="isManager" value="<%=isManagerOf(@user)%>"/>
+    10: 
+    11:     <table id="tablesorter-demo" class="tablesorter" border="0" cellpadding="0" cellspacing="1">
+    12:       <thead>
+  app/helpers/timeentries_helper.rb:13:in `isManagerOf'
+  app/views/timeentries/index.html.erb:9:in `_app_views_timeentries_index_html_erb__1005933742_88779810_726189310'
+
+Rendered /home/lantra/.rvm/gems/ruby-1.9.2-head/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+Rendered /home/lantra/.rvm/gems/ruby-1.9.2-head/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (7.7ms)
+Rendered /home/lantra/.rvm/gems/ruby-1.9.2-head/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (15.4ms)
+
+
+Started GET "/timeentries/index?id=e897765e5e7b8d916703a673b95bf540" for 127.0.0.1 at 2010-09-07 10:18:05 +0700
+  Processing by TimeentriesController#index as HTML
+  Parameters: {"id"=>"e897765e5e7b8d916703a673b95bf540"}
+Rendered timeentries/index.html.erb within layouts/application (31.5ms)
+Completed 200 OK in 134ms (Views: 38.9ms)
+
+
+Started GET "/user/index" for 127.0.0.1 at 2010-09-07 10:18:58 +0700
+  Processing by UserController#index as HTML
+Rendered user/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 35ms (Views: 10.0ms)
+
+
+Started GET "/user/delete?id=e897765e5e7b8d916703a673b95bf540" for 127.0.0.1 at 2010-09-07 10:19:00 +0700
+  Processing by UserController#delete as HTML
+  Parameters: {"id"=>"e897765e5e7b8d916703a673b95bf540"}
+Redirected to http://localhost:3000/user/index
+Completed 302 Found in 242ms
+
+
+Started GET "/user/index" for 127.0.0.1 at 2010-09-07 10:19:01 +0700
+  Processing by UserController#index as HTML
+Rendered user/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 76ms (Views: 10.2ms)
+
+
+Started GET "/user/edit?id=e897765e5e7b8d916703a673b95c22db" for 127.0.0.1 at 2010-09-07 10:19:04 +0700
+  Processing by UserController#edit as HTML
+  Parameters: {"id"=>"e897765e5e7b8d916703a673b95c22db"}
+Rendered user/edit.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 34ms (Views: 9.7ms)
+
+
+Started GET "/timeentries/index?id=e897765e5e7b8d916703a673b95c22db" for 127.0.0.1 at 2010-09-07 10:19:06 +0700
+  Processing by TimeentriesController#index as HTML
+  Parameters: {"id"=>"e897765e5e7b8d916703a673b95c22db"}
+Rendered timeentries/index.html.erb within layouts/application (28.9ms)
+Completed 200 OK in 180ms (Views: 36.3ms)
+
+
+Started GET "/home/logout" for 127.0.0.1 at 2010-09-07 10:38:59 +0700
+  Processing by HomeController#logout as HTML
+Redirected to http://localhost:3000/home/index
+Completed 302 Found in 1ms
+
+
+Started GET "/home/index" for 127.0.0.1 at 2010-09-07 10:38:59 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 10ms (Views: 9.2ms)
+
+
+Started GET "/home/login" for 127.0.0.1 at 2010-09-07 10:39:01 +0700
+  Processing by HomeController#login as HTML
+Rendered home/login.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 9ms (Views: 8.7ms)
+
+
+Started POST "/home/login" for 127.0.0.1 at 2010-09-07 10:39:04 +0700
+  Processing by HomeController#login as HTML
+  Parameters: {"authenticity_token"=>"BKFj60FEnZ1n8l1iEFmTTAmA8N0cOF0LKUQimf2/itw=", "user"=>{"username"=>"user1", "password"=>"[FILTERED]"}}
+Rendered home/login.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 121ms (Views: 12.4ms)
+
+
+Started POST "/home/login" for 127.0.0.1 at 2010-09-07 10:39:19 +0700
+  Processing by HomeController#login as HTML
+  Parameters: {"authenticity_token"=>"BKFj60FEnZ1n8l1iEFmTTAmA8N0cOF0LKUQimf2/itw=", "user"=>{"username"=>"user1", "password"=>"[FILTERED]"}}
+Rendered home/login.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 36ms (Views: 11.8ms)
+
+
+Started POST "/home/login" for 127.0.0.1 at 2010-09-07 10:39:25 +0700
+  Processing by HomeController#login as HTML
+  Parameters: {"authenticity_token"=>"BKFj60FEnZ1n8l1iEFmTTAmA8N0cOF0LKUQimf2/itw=", "user"=>{"username"=>"user2", "password"=>"[FILTERED]"}}
+Redirected to http://localhost:3000/home/index
+Completed 302 Found in 37ms
+
+
+Started GET "/home/index" for 127.0.0.1 at 2010-09-07 10:39:25 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 9ms (Views: 8.4ms)
+
+
+Started GET "/home/logout" for 127.0.0.1 at 2010-09-07 10:44:14 +0700
+  Processing by HomeController#logout as HTML
+Redirected to http://localhost:3000/home/index
+Completed 302 Found in 1ms
+
+
+Started GET "/home/index" for 127.0.0.1 at 2010-09-07 10:44:14 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 11ms (Views: 10.2ms)
+
+
+Started GET "/home/login" for 127.0.0.1 at 2010-09-07 10:44:22 +0700
+  Processing by HomeController#login as HTML
+Rendered home/login.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 9ms (Views: 9.0ms)
+
+
+Started POST "/home/login" for 127.0.0.1 at 2010-09-07 10:44:25 +0700
+  Processing by HomeController#login as HTML
+  Parameters: {"authenticity_token"=>"fU5yh6/gGxsqHkvs7V/8AofzdIdTTJ77yr94V4mxFAM=", "user"=>{"username"=>"user1", "password"=>"[FILTERED]"}}
+Redirected to http://localhost:3000/home/index
+Completed 302 Found in 74ms
+
+
+Started GET "/home/index" for 127.0.0.1 at 2010-09-07 10:44:26 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 11ms (Views: 9.2ms)
+
+
+Started GET "/home/logout" for 127.0.0.1 at 2010-09-07 10:44:29 +0700
+  Processing by HomeController#logout as HTML
+Redirected to http://localhost:3000/home/index
+Completed 302 Found in 1ms
+
+
+Started GET "/home/index" for 127.0.0.1 at 2010-09-07 10:44:29 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 11ms (Views: 10.2ms)
+
+
+Started GET "/home/login" for 127.0.0.1 at 2010-09-07 10:44:31 +0700
+  Processing by HomeController#login as HTML
+Rendered home/login.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 9ms (Views: 8.4ms)
+
+
+Started POST "/home/login" for 127.0.0.1 at 2010-09-07 10:44:36 +0700
+  Processing by HomeController#login as HTML
+  Parameters: {"authenticity_token"=>"R5gUAwFHpuDvXMYe1dqVO9PH2IdKsPim+QLtSb9En8w=", "user"=>{"username"=>"user2", "password"=>"[FILTERED]"}}
+Redirected to http://localhost:3000/home/index
+Completed 302 Found in 100ms
+
+
+Started GET "/home/index" for 127.0.0.1 at 2010-09-07 10:44:36 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 12ms (Views: 11.0ms)
+
+
+Started GET "/user/index" for 127.0.0.1 at 2010-09-07 10:44:41 +0700
+  Processing by UserController#index as HTML
+Rendered user/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 76ms (Views: 10.5ms)
+
+
+Started GET "/timeentries/index?id=e897765e5e7b8d916703a673b9d796cb" for 127.0.0.1 at 2010-09-07 10:44:55 +0700
+  Processing by TimeentriesController#index as HTML
+  Parameters: {"id"=>"e897765e5e7b8d916703a673b9d796cb"}
+Rendered timeentries/index.html.erb within layouts/application (34.5ms)
+Completed 200 OK in 177ms (Views: 40.6ms)
+
+
+Started GET "/user/index" for 127.0.0.1 at 2010-09-07 10:45:02 +0700
+  Processing by UserController#index as HTML
+Rendered user/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 23ms (Views: 10.3ms)
+
+
+Started GET "/timeentries/index?id=e897765e5e7b8d916703a673b9d77b91" for 127.0.0.1 at 2010-09-07 10:45:04 +0700
+  Processing by TimeentriesController#index as HTML
+  Parameters: {"id"=>"e897765e5e7b8d916703a673b9d77b91"}
+Rendered timeentries/index.html.erb within layouts/application (40.8ms)
+Completed 200 OK in 111ms (Views: 46.7ms)
+
+
+Started GET "/user/index" for 127.0.0.1 at 2010-09-07 10:45:07 +0700
+  Processing by UserController#index as HTML
+Rendered user/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 24ms (Views: 10.9ms)
+
+
+Started GET "/timeentries/index?id=e897765e5e7b8d916703a673b9d7320c" for 127.0.0.1 at 2010-09-07 10:45:08 +0700
+  Processing by TimeentriesController#index as HTML
+  Parameters: {"id"=>"e897765e5e7b8d916703a673b9d7320c"}
+Rendered timeentries/index.html.erb within layouts/application (29.9ms)
+Completed 200 OK in 104ms (Views: 36.1ms)
+
+
+Started GET "/user/index" for 127.0.0.1 at 2010-09-07 10:45:11 +0700
+  Processing by UserController#index as HTML
+Rendered user/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 24ms (Views: 11.0ms)
+
+
+Started GET "/timeentries/index?id=e897765e5e7b8d916703a673b9d796cb" for 127.0.0.1 at 2010-09-07 10:45:13 +0700
+  Processing by TimeentriesController#index as HTML
+  Parameters: {"id"=>"e897765e5e7b8d916703a673b9d796cb"}
+Rendered timeentries/index.html.erb within layouts/application (38.7ms)
+Completed 200 OK in 110ms (Views: 44.8ms)
+
+
+Started GET "/home/logout" for 127.0.0.1 at 2010-09-07 10:59:24 +0700
+  Processing by HomeController#logout as HTML
+Redirected to http://localhost:3000/home/index
+Completed 302 Found in 1ms
+
+
+Started GET "/home/index" for 127.0.0.1 at 2010-09-07 10:59:25 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 9ms (Views: 8.6ms)
+
+
+Started GET "/home/login" for 127.0.0.1 at 2010-09-07 10:59:26 +0700
+  Processing by HomeController#login as HTML
+Rendered home/login.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 9ms (Views: 8.2ms)
+
+
+Started POST "/home/login" for 127.0.0.1 at 2010-09-07 10:59:29 +0700
+  Processing by HomeController#login as HTML
+  Parameters: {"authenticity_token"=>"qcJfJPyhSEMB181yEyjs5F4u9XJBHrDcgnPs882Pb70=", "user"=>{"username"=>"user2", "password"=>"[FILTERED]"}}
+Redirected to http://localhost:3000/home/index
+Completed 302 Found in 59ms
+
+
+Started GET "/home/index" for 127.0.0.1 at 2010-09-07 10:59:29 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 11ms (Views: 10.8ms)
+
+
+Started GET "/user/index" for 127.0.0.1 at 2010-09-07 10:59:31 +0700
+  Processing by UserController#index as HTML
+Rendered user/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 26ms (Views: 10.4ms)
+
+
+Started GET "/timeentries/index?id=e897765e5e7b8d916703a673b9d796cb" for 127.0.0.1 at 2010-09-07 10:59:33 +0700
+  Processing by TimeentriesController#index as HTML
+  Parameters: {"id"=>"e897765e5e7b8d916703a673b9d796cb"}
+Rendered timeentries/index.html.erb within layouts/application (34.3ms)
+Completed 200 OK in 113ms (Views: 40.7ms)
+
+
+Started GET "/timeentries/index?id=e897765e5e7b8d916703a673b9d796cb" for 127.0.0.1 at 2010-09-07 11:10:50 +0700
+  Processing by TimeentriesController#index as HTML
+  Parameters: {"id"=>"e897765e5e7b8d916703a673b9d796cb"}
+Rendered timeentries/index.html.erb within layouts/application (40.7ms)
+Completed 200 OK in 208ms (Views: 59.5ms)
+
+
+Started GET "/timeentries/index?id=e897765e5e7b8d916703a673b9d796cb" for 127.0.0.1 at 2010-09-07 11:11:09 +0700
+  Processing by TimeentriesController#index as HTML
+  Parameters: {"id"=>"e897765e5e7b8d916703a673b9d796cb"}
+Rendered timeentries/index.html.erb within layouts/application (51.6ms)
+Completed 200 OK in 175ms (Views: 59.4ms)
+
+
+Started POST "/timeentries/tableedit" for 127.0.0.1 at 2010-09-07 11:11:21 +0700
+  Processing by TimeentriesController#tableedit as */*
+  Parameters: {"id"=>"e897765e5e7b8d916703a673b9d7810f", "oldValue"=>"12:43", "newValue"=>"12:50", "colName"=>"return_at"}
+Rendered text template (0.0ms)
+Completed 200 OK in 114ms (Views: 21.7ms)
+
+
+Started GET "/timeentries/index?id=e897765e5e7b8d916703a673b9d796cb" for 127.0.0.1 at 2010-09-07 11:11:24 +0700
+  Processing by TimeentriesController#index as HTML
+  Parameters: {"id"=>"e897765e5e7b8d916703a673b9d796cb"}
+Rendered timeentries/index.html.erb within layouts/application (44.9ms)
+Completed 200 OK in 149ms (Views: 56.5ms)
+
+
+Started GET "/timeentries/index?id=e897765e5e7b8d916703a673b9d796cb" for 127.0.0.1 at 2010-09-07 11:16:51 +0700
+  Processing by TimeentriesController#index as HTML
+  Parameters: {"id"=>"e897765e5e7b8d916703a673b9d796cb"}
+Completed   in 6ms
+
+SimplyStored::RecordNotFound (User could not be found with "e897765e5e7b8d916703a673b9d796cb"):
+  app/controllers/timeentries_controller.rb:4:in `index'
+
+Rendered /home/lantra/.rvm/gems/ruby-1.9.2-head/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.4ms)
+Rendered /home/lantra/.rvm/gems/ruby-1.9.2-head/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (12.1ms)
+Rendered /home/lantra/.rvm/gems/ruby-1.9.2-head/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (30.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-09-07 11:16:54 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 10ms (Views: 9.7ms)
+
+
+Started GET "/user/index" for 127.0.0.1 at 2010-09-07 11:16:58 +0700
+  Processing by UserController#index as HTML
+Rendered user/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 66ms (Views: 9.5ms)
+
+
+Started GET "/timeentries/index?id=e897765e5e7b8d916703a673b9f64448" for 127.0.0.1 at 2010-09-07 11:17:07 +0700
+  Processing by TimeentriesController#index as HTML
+  Parameters: {"id"=>"e897765e5e7b8d916703a673b9f64448"}
+Rendered timeentries/index.html.erb within layouts/application (39.1ms)
+Completed 200 OK in 119ms (Views: 46.3ms)
+
+
+Started GET "/user/index" for 127.0.0.1 at 2010-09-07 11:17:26 +0700
+  Processing by UserController#index as HTML
+Rendered user/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 24ms (Views: 10.0ms)
+
+
+Started GET "/timeentries/index?id=e897765e5e7b8d916703a673b9f63359" for 127.0.0.1 at 2010-09-07 11:17:30 +0700
+  Processing by TimeentriesController#index as HTML
+  Parameters: {"id"=>"e897765e5e7b8d916703a673b9f63359"}
+Rendered timeentries/index.html.erb within layouts/application (29.5ms)
+Completed 200 OK in 108ms (Views: 37.3ms)
+
+
+Started GET "/user/index" for 127.0.0.1 at 2010-09-07 11:17:33 +0700
+  Processing by UserController#index as HTML
+Rendered user/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 25ms (Views: 12.4ms)
+
+
+Started GET "/timeentries/index?id=e897765e5e7b8d916703a673b9f64448" for 127.0.0.1 at 2010-09-07 11:17:35 +0700
+  Processing by TimeentriesController#index as HTML
+  Parameters: {"id"=>"e897765e5e7b8d916703a673b9f64448"}
+Rendered timeentries/index.html.erb within layouts/application (53.2ms)
+Completed 200 OK in 169ms (Views: 60.1ms)
+
+
+Started GET "/home/logout" for 127.0.0.1 at 2010-09-07 11:17:44 +0700
+  Processing by HomeController#logout as HTML
+Redirected to http://localhost:3000/home/index
+Completed 302 Found in 1ms
+
+
+Started GET "/home/index" for 127.0.0.1 at 2010-09-07 11:17:44 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 10ms (Views: 9.8ms)
+
+
+Started GET "/home/login" for 127.0.0.1 at 2010-09-07 11:17:46 +0700
+  Processing by HomeController#login as HTML
+Rendered home/login.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 9ms (Views: 8.4ms)
+
+
+Started POST "/home/login" for 127.0.0.1 at 2010-09-07 11:17:49 +0700
+  Processing by HomeController#login as HTML
+  Parameters: {"authenticity_token"=>"IwPkbR2RyseNPAINDHz+R8UpIDWzg/arMW/TexSdYOI=", "user"=>{"username"=>"user2", "password"=>"[FILTERED]"}}
+Redirected to http://localhost:3000/home/index
+Completed 302 Found in 86ms
+
+
+Started GET "/home/index" for 127.0.0.1 at 2010-09-07 11:17:49 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 10ms (Views: 9.9ms)
+
+
+Started GET "/user/index" for 127.0.0.1 at 2010-09-07 11:17:51 +0700
+  Processing by UserController#index as HTML
+Rendered user/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 24ms (Views: 10.5ms)
+
+
+Started GET "/timeentries/index?id=e897765e5e7b8d916703a673b9f64448" for 127.0.0.1 at 2010-09-07 11:17:54 +0700
+  Processing by TimeentriesController#index as HTML
+  Parameters: {"id"=>"e897765e5e7b8d916703a673b9f64448"}
+Rendered timeentries/index.html.erb within layouts/application (37.0ms)
+Completed 200 OK in 154ms (Views: 43.9ms)
+
+
+Started POST "/timeentries/tableedit" for 127.0.0.1 at 2010-09-07 11:18:00 +0700
+  Processing by TimeentriesController#tableedit as */*
+  Parameters: {"id"=>"e897765e5e7b8d916703a673b9f63808", "oldValue"=>"11:16", "newValue"=>"11:20", "colName"=>"arrive_at"}
+Rendered text template (0.0ms)
+Completed 200 OK in 57ms (Views: 3.3ms)
+
+
+Started GET "/timeentries/index?id=e897765e5e7b8d916703a673b9f64448" for 127.0.0.1 at 2010-09-07 11:18:02 +0700
+  Processing by TimeentriesController#index as HTML
+  Parameters: {"id"=>"e897765e5e7b8d916703a673b9f64448"}
+Rendered timeentries/index.html.erb within layouts/application (37.3ms)
+Completed 200 OK in 132ms (Views: 43.0ms)
+
+
+Started GET "/home/logout" for 127.0.0.1 at 2010-09-07 11:31:37 +0700
+  Processing by HomeController#logout as HTML
+Redirected to http://localhost:3000/home/index
+Completed 302 Found in 1ms
+
+
+Started GET "/home/index" for 127.0.0.1 at 2010-09-07 11:31:37 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 10ms (Views: 9.2ms)
+
+
+Started GET "/home/login" for 127.0.0.1 at 2010-09-07 11:31:38 +0700
+  Processing by HomeController#login as HTML
+Rendered home/login.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 10ms (Views: 9.7ms)
+
+
+Started POST "/home/login" for 127.0.0.1 at 2010-09-07 11:31:41 +0700
+  Processing by HomeController#login as HTML
+  Parameters: {"authenticity_token"=>"iu6ZYXqj+eVaPZ2N6/aV4Aqb9aqQPjL26fqiYWRLXkY=", "user"=>{"username"=>"user2", "password"=>"[FILTERED]"}}
+Redirected to http://localhost:3000/home/index
+Completed 302 Found in 64ms
+
+
+Started GET "/home/index" for 127.0.0.1 at 2010-09-07 11:31:41 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 10ms (Views: 9.0ms)
+
+
+Started GET "/user/index" for 127.0.0.1 at 2010-09-07 11:31:42 +0700
+  Processing by UserController#index as HTML
+Rendered user/index.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 27ms (Views: 10.2ms)
+
+
+Started GET "/timeentries/index?id=e897765e5e7b8d916703a673b9f64448" for 127.0.0.1 at 2010-09-07 11:31:44 +0700
+  Processing by TimeentriesController#index as HTML
+  Parameters: {"id"=>"e897765e5e7b8d916703a673b9f64448"}
+Rendered timeentries/index.html.erb within layouts/application (39.4ms)
+Completed 200 OK in 118ms (Views: 45.9ms)
+
+
+Started GET "/home/logout" for 127.0.0.1 at 2010-09-07 12:58:37 +0700
+  Processing by HomeController#logout as HTML
+Redirected to http://localhost:3000/home/index
+Completed 302 Found in 1ms
+
+
+Started GET "/home/index" for 127.0.0.1 at 2010-09-07 12:58:37 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 11ms (Views: 11.0ms)
+
+
+Started GET "/home/login" for 127.0.0.1 at 2010-09-07 12:58:38 +0700
+  Processing by HomeController#login as HTML
+Rendered home/login.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 9ms (Views: 8.2ms)
+
+
+Started POST "/home/login" for 127.0.0.1 at 2010-09-07 12:58:41 +0700
+  Processing by HomeController#login as HTML
+  Parameters: {"authenticity_token"=>"nuu+EYWMAY/W7cniMg2SusbKY36R/C9pvxZCvPDq428=", "user"=>{"username"=>"user2", "password"=>"[FILTERED]"}}
+Redirected to http://localhost:3000/home/index
+Completed 302 Found in 59ms
+
+
+Started GET "/home/index" for 127.0.0.1 at 2010-09-07 12:58:41 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 11ms (Views: 10.2ms)
+
+
+Started GET "/user/index" for 127.0.0.1 at 2010-09-07 12:58:42 +0700
+  Processing by UserController#index as HTML
+Rendered user/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 30ms (Views: 10.6ms)
+
+
+Started GET "/timeentries/index?id=e897765e5e7b8d916703a673b9f64448" for 127.0.0.1 at 2010-09-07 12:58:44 +0700
+  Processing by TimeentriesController#index as HTML
+  Parameters: {"id"=>"e897765e5e7b8d916703a673b9f64448"}
+Rendered timeentries/index.html.erb within layouts/application (33.7ms)
+Completed 200 OK in 113ms (Views: 39.4ms)
+
+
+Started GET "/home/logout" for 127.0.0.1 at 2010-09-07 13:11:46 +0700
+  Processing by HomeController#logout as HTML
+Redirected to http://localhost:3000/home/index
+Completed 302 Found in 1ms
+
+
+Started GET "/home/index" for 127.0.0.1 at 2010-09-07 13:11:46 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 10ms (Views: 8.9ms)
+
+
+Started GET "/home/login" for 127.0.0.1 at 2010-09-07 13:11:47 +0700
+  Processing by HomeController#login as HTML
+Rendered home/login.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 9ms (Views: 8.1ms)
+
+
+Started POST "/home/login" for 127.0.0.1 at 2010-09-07 13:11:51 +0700
+  Processing by HomeController#login as HTML
+  Parameters: {"authenticity_token"=>"X6C9IVwU2BBx/Rc2Hf7E4WXqHQYEYonQmDCSW0Bz3T8=", "user"=>{"username"=>"user2", "password"=>"[FILTERED]"}}
+Redirected to http://localhost:3000/home/index
+Completed 302 Found in 79ms
+
+
+Started GET "/home/index" for 127.0.0.1 at 2010-09-07 13:11:51 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 9ms (Views: 8.6ms)
+
+
+Started GET "/user/index" for 127.0.0.1 at 2010-09-07 13:11:53 +0700
+  Processing by UserController#index as HTML
+Rendered user/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 22ms (Views: 10.6ms)
+
+
+Started GET "/timeentries/index?id=aa8326480934e5c95d0260763cf0bf22" for 127.0.0.1 at 2010-09-07 13:12:02 +0700
+  Processing by TimeentriesController#index as HTML
+  Parameters: {"id"=>"aa8326480934e5c95d0260763cf0bf22"}
+Rendered timeentries/index.html.erb within layouts/application (35.1ms)
+Completed 200 OK in 106ms (Views: 43.0ms)
+
+
+Started GET "/timeentries/index?id=aa8326480934e5c95d0260763cf0bf22" for 127.0.0.1 at 2010-09-07 13:12:32 +0700
+  Processing by TimeentriesController#index as HTML
+  Parameters: {"id"=>"aa8326480934e5c95d0260763cf0bf22"}
+Rendered timeentries/index.html.erb within layouts/application (69.1ms)
+Completed   in 164ms
+
+ActionView::Template::Error (undefined method `to_formatted_s' for "2010-09-07T13:10:56+07:00":String):
+    25:           <tr>
+    26:             <td class="id" style="display:none"><%=timeentry.id %></td>
+    27:             <td name="date"><%=timeentry.date %></td>
+    28:             <td name="arrive_at"><%=formatted_hour(timeentry.arrive_at) %></td>
+    29:             <td name="out_at"><%=formatted_hour(timeentry.out_at) %></td>
+    30:             <td name="return_at"><%=formatted_hour(timeentry.return_at) %></td>
+    31:             <td name="leave_at"><%=formatted_hour(timeentry.leave_at) %></td>
+  app/helpers/timeentries_helper.rb:3:in `formatted_hour'
+  app/views/timeentries/index.html.erb:28:in `block in _app_views_timeentries_index_html_erb__815908879_87716750_522814674'
+  app/views/timeentries/index.html.erb:24:in `each'
+  app/views/timeentries/index.html.erb:24:in `_app_views_timeentries_index_html_erb__815908879_87716750_522814674'
+
+Rendered /home/lantra/.rvm/gems/ruby-1.9.2-head/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+Rendered /home/lantra/.rvm/gems/ruby-1.9.2-head/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (11.1ms)
+Rendered /home/lantra/.rvm/gems/ruby-1.9.2-head/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (20.0ms)
+
+
+Started GET "/timeentries/index?id=aa8326480934e5c95d0260763cf0bf22" for 127.0.0.1 at 2010-09-07 13:38:39 +0700
+  Processing by TimeentriesController#index as HTML
+  Parameters: {"id"=>"aa8326480934e5c95d0260763cf0bf22"}
+Rendered timeentries/index.html.erb within layouts/application (40.7ms)
+Completed 200 OK in 131ms (Views: 46.7ms)
+
+
+Started POST "/timeentries/tableedit" for 127.0.0.1 at 2010-09-07 13:38:47 +0700
+  Processing by TimeentriesController#tableedit as */*
+  Parameters: {"id"=>"aa8326480934e5c95d0260763cf09a09", "oldValue"=>"13:10", "newValue"=>"15:10", "colName"=>"arrive_at"}
+Rendered text template (0.0ms)
+Completed 200 OK in 81ms (Views: 11.1ms)
+
+
+Started GET "/timeentries/index?id=aa8326480934e5c95d0260763cf0bf22" for 127.0.0.1 at 2010-09-07 13:38:50 +0700
+  Processing by TimeentriesController#index as HTML
+  Parameters: {"id"=>"aa8326480934e5c95d0260763cf0bf22"}
+Rendered timeentries/index.html.erb within layouts/application (34.4ms)
+Completed 200 OK in 113ms (Views: 40.0ms)
