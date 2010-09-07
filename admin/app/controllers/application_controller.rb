@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
   end
 
   def authenticate
-    session['is_authenticated'] == 'authenticated'
+    session['is_authenticated']
   end
 
   def get_encrypt(s)

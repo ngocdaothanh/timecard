@@ -3,8 +3,7 @@
 <head>
   <title>Admin</title>
   <%= stylesheet_link_tag :all %>
-  <%= javascript_include_tag :defaults,
-   'jquery.uitableedit', 'ready'%>
+  <%= javascript_include_tag :defaults, 'jquery.uitableedit', 'ready'%>
   <%= csrf_meta_tag %>
 </head>
 <body>
@@ -12,7 +11,10 @@
     <tr>
       <td style="text-align: right">
         <% if session['is_admin'] %> administrator <% end %>
-        <%= session['user_name'] %>| <a href="/home/login">Login</a> | <a href="/home/logout">Logout</a> | <a href="/user/create">Create User</a> |
+        <%= session['user_name'] %>|
+        <%  if not session['is_authenticated'] %><a href="/home/login">Login</a> |<% end %>
+        <%  if session['is_authenticated'] %> <a href="/home/logout">Logout</a> |<% end %>
+        <a href="/user/create">Create User</a> |
       </td>
     </tr>
   </table>
