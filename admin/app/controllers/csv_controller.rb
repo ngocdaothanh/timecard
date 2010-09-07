@@ -1,14 +1,15 @@
 class CsvController < ApplicationController
-  require 'rubygems'
-  require "fastercsv"
+  #require 'rubygems'
+  #require "fastercsv"
 
   def download
+
     @user = User.find(params[:id])
     @timeentries = @user.timeentries
 
-    @outfile = "members_" + Time.now.strftime("%m-%d-%Y") + ".csv"
+    @outfile = "timeentries_" + Time.now.strftime("%m-%d-%Y") + ".csv"
 
-    csv_data = FasterCSV.generate do |csv|
+    csv_data = CSV.generate do |csv|
       csv << [
         "Date",
         "Arrive At",
@@ -35,6 +36,6 @@ class CsvController < ApplicationController
 
     flash[:notice] = "Export complete!"
 
-   # render :text => 'OK'
+    # render :text => 'OK'
   end
 end
