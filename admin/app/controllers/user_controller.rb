@@ -55,11 +55,29 @@ class UserController < ApplicationController
 
   def edit
     @title = 'Edit User'
+    @errors = []
+    
     if authenticate     # authentication
       if request.post?
         if is_admin_      # administrator authorization
           @user = User.find(params[:user][:id])
-          if params[:user][:password] == params[:user][:cfm_password]
+
+          if @user.username != params[:user][:username]
+            @existUser = User.find_by_username(params[:user][:username])
+            if not (@existUser.nil?)
+              @errors.insert(0, "#{params[:user][:username]} is existing")
+            end
+          end
+
+          if params[:user][:username] == ''
+            @errors.insert(0, "User name is not empty")
+          end
+
+          if not params[:user][:password] == params[:user][:cfm_password]
+            @errors.insert(0, "Password and confirm password are not same")
+          end
+
+          if @errors.length == 0  # validation is ok
             if params[:user][:password] == ''
               @user.update_attributes(
                   :username  => params[:user][:username],
@@ -80,7 +98,6 @@ class UserController < ApplicationController
           else
             @groups = Group.all
             @users = User.all
-            @message = 'Password and confirm password are not matching'
           end
         else
           if session['user_id'] == params[:user][:id]   # edit only your record
@@ -91,7 +108,7 @@ class UserController < ApplicationController
               end
               redirect_to user_index_path
             else
-              @message = 'Password and confirm password are not matching'
+              @errors.insert(0, "Password and confirm password are not same")
             end
           end
         end
@@ -110,7 +127,7 @@ class UserController < ApplicationController
           end
         end
       end
-    else
+    else  # no authentication
       must_login
     end
   end

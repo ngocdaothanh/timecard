@@ -11,6 +11,9 @@
         <td colspan="2"><h2>Login Form</h2></td>
       </tr>
       <tr>
+        <td colspan="2"><span style="color: red; font-size: small"><%= @message %></span><br /><br /></td>
+      </tr>
+      <tr>
         <td>User name: </td>
         <td><input id="username" type="text" name="user[username]" /></td>
       </tr>
@@ -23,8 +26,6 @@
         <td><input type="submit" value="Login"/></td>
       </tr>
     </table>
-    <br /><br />
-    <span style="color: red"><%= @message %></span>
   </form>
 </div>
 
