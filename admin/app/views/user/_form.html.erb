@@ -1,3 +1,8 @@
+<ul style="font-size: smaller; color: red">
+  <% @errors.each do |error| %>
+    <li><%=  error %></li>
+  <% end %>
+</ul>
 <span style="color: red; font-size: small"><%= @message %></span><br /><br />
 
 <table>

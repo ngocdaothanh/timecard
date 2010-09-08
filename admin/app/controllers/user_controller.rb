@@ -1,6 +1,7 @@
 class UserController < ApplicationController
   def index
     @title = 'User List'
+    @message = params[:message]
     if authenticate
       @users = User.find_all_by_disabled(false)
     else
@@ -10,6 +11,8 @@ class UserController < ApplicationController
 
   def create
     @title = 'Create User'
+    @errors = []
+    
     # only administrator allows create an user account
     if not is_admin_
       go_home
@@ -20,7 +23,25 @@ class UserController < ApplicationController
     @user = User.new
 
     if request.post?
-      if params[:user][:password] == params[:user][:cfm_password]
+      # Validate
+      @existUser = User.find_by_username(params[:user][:username])
+      if not (@existUser.nil?)
+        @errors.insert(0, "#{params[:user][:username]} is existing")
+      end
+
+      if not params[:user][:password] == params[:user][:cfm_password]
+        @errors.insert(0, "Password and confirm password are not same")
+      end
+
+      if params[:user][:username] == ''
+        @errors.insert(0, "User name is not empty")
+      end
+
+      if params[:user][:password] == ''
+        @errors.insert(0, "Password is not empty")
+      end
+
+      if @errors.length == 0
         User.create(:username     => params[:user][:username],
                     :name         => params[:user][:name],
                     :password     => params[:user][:password],
@@ -28,8 +49,6 @@ class UserController < ApplicationController
                     :group_id     => params[:user][:group_id] == ""? nil : params[:user][:group_id],
                     :manager_id   => params[:user][:manager_id] == ""? nil : params[:user][:manager_id])
         @message = "Successfully create #{params[:user][:username]} account"
-      else
-        @message = 'Password and confirm password are not same!'
       end
     end
   end
@@ -107,6 +126,6 @@ class UserController < ApplicationController
     else
       @message = 'Only administrator has deleted permisson'
     end
-    redirect_to :controller => 'user', :action => 'index'
+    redirect_to :controller => 'user', :action => 'index', :message => @message
   end
 end
