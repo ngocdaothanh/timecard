@@ -7,9 +7,17 @@
   <%= csrf_meta_tag %>
 </head>
 <body>
-  <table width="100%">
+  <table width="100%" cellspacing="1">
     <tr>
-      <td style="text-align: right; font-size: small">
+      <td style="vertical-align: top ; width: 12%;"></td>
+      <td style="vertical-align: top; padding: 10px; background-color: cadetblue; height:50px">
+        <span style=" font-size: x-large; color: crimson">TimeCard System</span>
+      </td>
+      <td style="vertical-align: top; width: 12%"></td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top ; width: 12%;"></td>
+      <td style="text-align: right; vertical-align: middle; font-size: small; background-color:cadetblue; height: 20px">
         <% if session['is_admin'] %> Administrator: <% end %>
         <%= session['user_name'] %> |
         <%  if session['is_authenticated'] %><%= link_to 'Users', "/user/index" %> |<% end %>
@@ -18,20 +26,14 @@
         <%  if session['is_authenticated'] %><%= link_to 'Logout', "/home/logout" %> |<% end %>
         <%  if session['is_admin'] %><%= link_to 'Create User', "/user/create" %> |<% end %>
       </td>
+      <td style="vertical-align: top; width: 12%"></td>
     </tr>
-  </table>
-  <h1></h1>
-  <table width="100%">
     <tr>
-      <td style="vertical-align: top ; width: 15%; background-color: #8dbdd8 ; padding: 10px">
-        
-      </td>
-      <td style="vertical-align: top; padding: 10px">
+      <td style="vertical-align: top ; width: 12%;"></td>
+      <td style="vertical-align: top; padding: 10px; background-color:silver; height:auto">
         <%= yield %>
       </td>
-      <td style="vertical-align: top; width: 15%; background-color: #8dbdd8 ; padding: 10px">
-
-      </td>
+      <td style="vertical-align: top; width: 12%"></td>
     </tr>
   </table>
 </body>
