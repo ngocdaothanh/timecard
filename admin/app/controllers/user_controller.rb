@@ -1,5 +1,6 @@
 class UserController < ApplicationController
   def index
+    @title = 'User List'
     if authenticate
       @users = User.find_all_by_disabled(false)
     else
@@ -8,6 +9,7 @@ class UserController < ApplicationController
   end
 
   def create
+    @title = 'Create User'
     # only administrator allows create an user account
     if not is_admin_
       go_home
@@ -33,6 +35,7 @@ class UserController < ApplicationController
   end
 
   def edit
+    @title = 'Edit User'
     if authenticate     # authentication
       if request.post?
         if is_admin_      # administrator authorization

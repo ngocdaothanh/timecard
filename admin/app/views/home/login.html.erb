@@ -3,21 +3,28 @@
 # and open the template in the editor.
 %>
 
-<h2>Login Form</h2>
+<div align="center">
+  <form method="post" action="/home/login">
+    <input type="hidden"  value="<%= form_authenticity_token %>"  name="authenticity_token"/>
+    <table width="40%">
+      <tr>
+        <td colspan="2"><h2>Login Form</h2></td>
+      </tr>
+      <tr>
+        <td>User name: </td>
+        <td><input id="username" type="text" name="user[username]" /></td>
+      </tr>
+      <tr>
+        <td>Password: </td>
+        <td><input id="password" type="password" name="user[password]" /></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><input type="submit" value="Login"/></td>
+      </tr>
+    </table>
+    <br /><br />
+    <span style="color: red"><%= @message %></span>
+  </form>
+</div>
 
-<form method="post" action="/home/login">
-  <input type="hidden"  value="<%= form_authenticity_token %>"  name="authenticity_token"/>
-  <table width="40%">
-    <tr>
-      <td>User name: </td>
-      <td><input id="username" type="text" name="user[username]" /></td>
-    </tr>
-    <tr>
-      <td>Password: </td>
-      <td><input id="password" type="password" name="user[password]" /></td>
-    </tr>
-  </table>
-  <input type="submit" value="Login"/>
-  <br /><br />
-  <span style="color: red"><%= @message %></span>
-</form>

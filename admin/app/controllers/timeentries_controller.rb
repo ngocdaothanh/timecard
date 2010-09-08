@@ -1,5 +1,6 @@
 class TimeentriesController < ApplicationController
   def index
+    @title = 'Working Time List'
     #puts "Trong TimeentriesController index id=#{params[:id]}"
     @user = User.find(params[:id])
     @timeentries = @user.timeentries
