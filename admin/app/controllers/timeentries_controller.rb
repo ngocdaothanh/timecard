@@ -12,8 +12,8 @@ class TimeentriesController < ApplicationController
   end
 
   def tableedit
-    puts "BBBBBBBB #{params}"
-    puts "BBBBBBBB #{params['oldValue']}"
+    #puts "BBBBBBBB #{params}"
+    #puts "BBBBBBBB #{params['oldValue']}"
 
     colName = params['colName']
     oldValue = params['oldValue']
