@@ -1,13 +1,12 @@
 class CsvController < ApplicationController
-  #require 'rubygems'
-  #require "fastercsv"
-
   def download
 
     @user = User.find(params[:id])
     @timeentries = @user.timeentries
 
     @outfile = "timeentries_" + Time.now.strftime("%m-%d-%Y") + ".csv"
+
+    require 'csv'
 
     csv_data = CSV.generate do |csv|
       csv << [
