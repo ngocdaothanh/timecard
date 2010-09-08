@@ -26,7 +26,8 @@ namespace :db do
         user = User.create!(:username => username,
           :name => Faker::Name.name,
           :password =>"a",
-          :group => g
+          :group => g,
+          :disabled => false
         )
         puts "-- User id : #{user.id}"
 
