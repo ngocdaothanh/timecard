@@ -20,8 +20,9 @@
       <td><%= user.username %></td>
       <td><%= user.name %></td>
       <td>
-      <a href="/user/edit?id=<%= user.id %>">edit</a> <a href="/user/delete?id=<%= user.id %>">delete</a>
-      <a href="/timeentries/index?id=<%= user.id %>">diligence</a>
+      <a href="/user/edit?id=<%= user.id %>">edit</a> |
+      <a href="/user/delete?id=<%= user.id %>">delete</a> |
+      <a href="/timeentries/index?id=<%= user.id %>">working time</a>
       </td>
       </tr>
     </tbody>

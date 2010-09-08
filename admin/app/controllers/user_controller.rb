@@ -25,8 +25,9 @@ class UserController < ApplicationController
                     :disabled     => false,
                     :group_id     => params[:user][:group_id] == ""? nil : params[:user][:group_id],
                     :manager_id   => params[:user][:manager_id] == ""? nil : params[:user][:manager_id])
+        @message = "Successfully create #{params[:user][:username]} account"
       else
-        @message = 'password and confirm password are not matching!'
+        @message = 'Password and confirm password are not same!'
       end
     end
   end
@@ -41,16 +42,16 @@ class UserController < ApplicationController
               @user.update_attributes(
                   :username  => params[:user][:username],
                   :name      => params[:user][:name],
-                  :group_id  => params[:user][:group_id],
-                  :manager_id  => params[:user][:manager_id],
+                  :group_id  => params[:user][:group_id] == "" ? nil : params[:user][:group_id],
+                  :manager_id  => params[:user][:manager_id] == "" ? nil : params[:user][:manager_id],
                   :disabled    => params[:user][:disabled] == nil ? false : true)
             else
               @user.update_attributes(
                   :username  => params[:user][:username],
                   :encrypted_password  => get_encrypt(params[:user][:password]),
                   :name      => params[:user][:name],
-                  :group_id  => params[:user][:group_id],
-                  :manager_id  => params[:user][:manager_id],
+                  :group_id  => params[:user][:group_id] == "" ? nil : params[:user][:group_id],
+                  :manager_id  => params[:user][:manager_id] == "" ? nil : params[:user][:manager_id],
                   :disabled    => params[:user][:disabled] == nil ? false : true)
             end
             redirect_to user_index_path

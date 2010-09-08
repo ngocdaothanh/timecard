@@ -9,12 +9,14 @@
 <body>
   <table width="100%">
     <tr>
-      <td style="text-align: right">
-        <% if session['is_admin'] %> administrator <% end %>
-        <%= session['user_name'] %>|
-        <%  if not session['is_authenticated'] %><a href="/home/login">Login</a> |<% end %>
-        <%  if session['is_authenticated'] %> <a href="/home/logout">Logout</a> |<% end %>
-        <a href="/user/create">Create User</a> |
+      <td style="text-align: right; font-size: small">
+        <% if session['is_admin'] %> Administrator: <% end %>
+        <%= session['user_name'] %> |
+        <%  if session['is_authenticated'] %><%= link_to 'Users', "/user/index" %> |<% end %>
+        <%= link_to 'Home', "/home/index" %> |
+        <%  if not session['is_authenticated'] %><%= link_to 'Login', "/home/login" %> |<% end %>
+        <%  if session['is_authenticated'] %><%= link_to 'Logout', "/home/logout" %> |<% end %>
+        <%  if session['is_admin'] %><%= link_to 'Create User', "/user/create" %> |<% end %>
       </td>
     </tr>
   </table>
@@ -22,7 +24,7 @@
   <table width="100%">
     <tr>
       <td style="vertical-align: top ; width: 15%; background-color: #eeeeee; padding: 10px">
-        <a href="/user/index">Users</a>
+        
       </td>
       <td style="vertical-align: top; padding: 10px">
         <%= yield %>
