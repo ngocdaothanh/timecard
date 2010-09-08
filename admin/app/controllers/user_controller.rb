@@ -43,7 +43,7 @@ class UserController < ApplicationController
                   :name      => params[:user][:name],
                   :group_id  => params[:user][:group_id],
                   :manager_id  => params[:user][:manager_id],
-                  :disabled    => params[:user][:disabled])
+                  :disabled    => params[:user][:disabled] == nil ? false : true)
             else
               @user.update_attributes(
                   :username  => params[:user][:username],
@@ -51,7 +51,7 @@ class UserController < ApplicationController
                   :name      => params[:user][:name],
                   :group_id  => params[:user][:group_id],
                   :manager_id  => params[:user][:manager_id],
-                  :disabled    => params[:user][:disabled])
+                  :disabled    => params[:user][:disabled] == nil ? false : true)
             end
             redirect_to user_index_path
           else

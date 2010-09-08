@@ -1,23 +1,30 @@
  <span style="color: red; font-size: small"><%= @message %></span>
 
- <table border="1" cellspacing="0" style="font-size:smaller">
-  <tr>
-    <th>Name</th>
-    <th>Username</th>
-    <th>Group</th>
-    <th>Manager</th>
-    <th>Action</th>
-  </tr>
-  <% @users.each do |user| %>
-  <tr>
-    <td><%= user.name %></td>
-    <td><%= user.username %></td>
-    <td><%= user.group_id %></td>
-    <td><%= user.manager_id %></td>
-    <td>
+ <h2>List of GNT employees</h2>
+ <div align="center">
+   <table class="tablesorter" border="0" cellpadding="0" cellspacing="1">
+     <thead>
+      <tr>
+        <th>Group</th>
+        <th>Manager</th>
+        <th>Username</th>
+        <th>Name</th>
+        <th>Action</th>
+      </tr>
+     </thead>
+    <% @users.each do |user| %>
+    <tbody>
+      <tr>
+      <td><%= user.group_name(user.group_id) %></td>
+      <td><%= user.manager_name %></td>
+      <td><%= user.username %></td>
+      <td><%= user.name %></td>
+      <td>
       <a href="/user/edit?id=<%= user.id %>">edit</a> <a href="/user/delete?id=<%= user.id %>">delete</a>
       <a href="/timeentries/index?id=<%= user.id %>">diligence</a>
-    </td>
-  </tr>
-  <% end %>
-</table>
+      </td>
+      </tr>
+    </tbody>
+    <% end %>
+  </table>
+ </div>

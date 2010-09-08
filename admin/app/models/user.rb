@@ -21,6 +21,9 @@ class User
     User.find(self.manager_id).name unless self.manager_id.nil?
   end
 
+  def group_name(group_id)
+    Group.find(group_id).name unless group_id.nil?
+  end
 
   before_save :encrypt_password
 
@@ -34,5 +37,5 @@ class User
       Digest::SHA2.hexdigest(string)
     end
 
-  
+
 end
