@@ -6,35 +6,48 @@
   <%= javascript_include_tag :defaults, 'jquery.uitableedit', 'ready'%>
   <%= csrf_meta_tag %>
 </head>
-<body>
-  <table width="100%" cellspacing="1">
-    <tr>
-      <td style="vertical-align: top ; width: 12%;"></td>
-      <td style="vertical-align: top; padding: 10px; background-color: cadetblue; height:50px">
-        <span style=" font-size: x-large; color: crimson">TimeCard System</span>
-      </td>
-      <td style="vertical-align: top; width: 12%"></td>
-    </tr>
-    <tr>
-      <td style="vertical-align: top ; width: 12%;"></td>
-      <td style="text-align: right; vertical-align: middle; font-size: small; background-color:cadetblue; height: 20px">
-        <% if session['is_admin'] %> Administrator: <% end %>
-        <%= session['user_name'] %> |
-        <%  if session['is_authenticated'] %><%= link_to 'Users', "/user/index" %> |<% end %>
-        <%= link_to 'Home', "/home/index" %> |
-        <%  if not session['is_authenticated'] %><%= link_to 'Login', "/home/login" %> |<% end %>
-        <%  if session['is_authenticated'] %><%= link_to 'Logout', "/home/logout" %> |<% end %>
-        <%  if session['is_admin'] %><%= link_to 'Create User', "/user/create" %> |<% end %>
-      </td>
-      <td style="vertical-align: top; width: 12%"></td>
-    </tr>
-    <tr>
-      <td style="vertical-align: top ; width: 12%;"></td>
-      <td style="vertical-align: top; padding: 10px; background-color:silver; height:auto">
-        <%= yield %>
-      </td>
-      <td style="vertical-align: top; width: 12%"></td>
-    </tr>
+<body background="/images/background.jpeg">
+  <table height="100%" width="100%" cellspacing="1">
+    <tbody>
+      <tr>
+        <td style="width: 12%;"></td>
+        <td style="padding: 15px; background-color: #606060; height:50px">
+          <span style=" font-size: x-large; color:#ffffff">TimeCard System</span>
+        </td>
+        <td style="width: 12%"></td>
+      </tr>
+      <tr>
+        <td style="width: 12%;"></td>
+        <td style="text-align: right; vertical-align: middle; font-size: small; background-color:#606060; height: 10px">
+          <ul>
+            <% if not session['is_authenticated'] %><li><%= link_to 'Login', "/home/login" %></li><% end %>
+            <% if session['is_authenticated'] %><li><%= link_to 'Logout', "/home/logout" %></li><% end %>
+            <li><%= link_to 'Home', "/home/index" %></li>
+            <% if session['is_admin'] %><li><%= link_to 'Create User', "/user/create" %></li><% end %>
+            <% if session['is_authenticated'] %><li><%= link_to 'Users', "/user/index" %></li><% end %>
+            <li style="color:#99ccff"><%= session['user_name'] %></li>
+            <li style="color:#99ccff"><% if session['is_admin'] %> Administrator: <% end %></li>
+          </ul>
+        </td>
+        <td style="width: 12%"></td>
+      </tr>
+      <tr>
+        <td style="width: 12%;"></td>
+        <td style="vertical-align: top; padding: 15px; background-color:#eeeeee;">
+          <%= yield %>
+        </td>
+        <td style="width: 12%"></td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td></td>
+        <td style="text-align: center; vertical-align: middle; background-color:#606060; height: 20px">
+          <span style="font-size:10px ; color: #ffffff">GNT - Company</span>
+        </td>
+        <td></td>
+      </tr>
+    </tfoot>
   </table>
 </body>
 </html>
