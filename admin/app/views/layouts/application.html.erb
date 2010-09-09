@@ -18,16 +18,14 @@
       </tr>
       <tr>
         <td style="width: 12%;"></td>
-        <td style="text-align: right; vertical-align: middle; font-size: small; background-color:#606060; height: 10px">
-          <ul>
-            <% if not session['is_authenticated'] %><li><%= link_to 'Login', "/home/login" %></li><% end %>
-            <% if session['is_authenticated'] %><li><%= link_to 'Logout', "/home/logout" %></li><% end %>
-            <li><%= link_to 'Home', "/home/index" %></li>
-            <% if session['is_admin'] %><li><%= link_to 'Create User', "/user/create" %></li><% end %>
-            <% if session['is_authenticated'] %><li><%= link_to 'Users', "/user/index" %></li><% end %>
-            <li style="color:#99ccff"><%= session['user_name'] %></li>
-            <li style="color:#99ccff"><% if session['is_admin'] %> Administrator: <% end %></li>
-          </ul>
+        <td style="text-align: right; vertical-align: middle; background-color:#606060; height: 12px">
+          <% if session['is_admin'] %><span style="color:#99ccff; font-size: 11px;">Administrator: </span><% end %>
+          <span style="color:#99ccff; font-size: 11px;"><%= session['user_name'] %></span>
+          <% if session['is_authenticated'] %><span><%= link_to 'Users', "/user/index" %></span><% end %>
+          <% if session['is_admin'] %><span><%= link_to 'Create User', "/user/create" %></span><% end %>
+          <span><%= link_to 'Home', "/home/index" %></span>
+          <% if session['is_authenticated'] %><span><%= link_to 'Logout', "/home/logout" %></span><% end %>
+          <% if not session['is_authenticated'] %><span><%= link_to 'Login', "/home/login" %></span><% end %>
         </td>
         <td style="width: 12%"></td>
       </tr>

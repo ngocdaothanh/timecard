@@ -1,19 +1,14 @@
-ul li {
-	float: right;
-	list-style-type: none;
-}
-
-ul li a {
+span a {
 	background: transparent;
-	font-size: small;
+	font-size: 11px;
         color: white;
 	font-style: normal;
 	text-transform: none;
-	padding: 0px 5px;
+	padding: 0px 3px;
 	text-decoration: none;
 }
 
-ul li a:hover {
+span a:hover {
 	background: steelblue;
 
 }
