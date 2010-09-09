@@ -21,7 +21,6 @@ class HomeController < ApplicationController
         session['is_authenticated'] = true
         session['user_name'] = @user.username
         session['user_id'] = @user.id
-        #session['current_user'] = @user
         session['group_id'] = @user.group_id
         session['is_admin'] = is_admin(@user.username)
         session['is_authorized'] = false

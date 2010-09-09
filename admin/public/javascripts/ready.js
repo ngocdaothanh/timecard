@@ -1,6 +1,6 @@
 $(document).ready(function(){
     var t = $('#tablesorter-demo');
-    var isManager = $('#isManager').attr('value');
+    var isManager = $('#ismanager').attr('value');
     if (isManager == 'false') {
       return;
     }
