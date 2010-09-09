@@ -10,5 +10,16 @@ span a {
 
 span a:hover {
 	background: steelblue;
+}
 
+.form_style {
+    border: solid  #8dbdd8 1px;
+    padding: 5px;
+    font-size: 12px;
+    width: 500px;
+}
+
+.notify {
+    color: red;
+    font-size: small;
 }

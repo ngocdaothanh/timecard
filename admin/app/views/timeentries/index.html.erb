@@ -3,9 +3,9 @@
     <title>Demo</title>
   </head>
   <body>
-    <p>Full Name : <%=@user.name %> </p>
-    <p>Group Name : <%=@user.group.name %> </p>
-    <p>Manager : <%=@user.manager_name %> </p>
+    <p style="font-size: 12px">Full Name : <%=@user.name %> </p>
+    <p style="font-size: 12px">Group Name : <%=@user.group.name %> </p>
+    <p style="font-size: 12px">Manager : <%=@user.manager_name %> </p>
     <input type="hidden" id="ismanager" value="<%=is_manager_of(@user)%>"/>
 
     <table id="tablesorter-demo" class="tablesorter" border="0" cellpadding="0" cellspacing="1">

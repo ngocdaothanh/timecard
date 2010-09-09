@@ -1,6 +1,6 @@
  <h2>List of GNT employees</h2>
  <br />
- <span style="color: red; font-size: small"><%= @message %></span>
+ <span class="notify"><%= @message %></span>
  <div align="center">
    <table class="tablesorter" border="0" cellpadding="0" cellspacing="1">
      <thead>
@@ -21,7 +21,7 @@
       <td><%= user.name %></td>
       <td>
       <a href="/user/edit?id=<%= user.id %>">edit</a> |
-      <a href="/user/delete?id=<%= user.id %>">delete</a> |
+      <a href="/user/delete?id=<%= user.id %>" onclick="return confirm('Are you sure you want to delete?')" >delete</a> |
       <a href="/timeentries/index?id=<%= user.id %>">working time</a>
       </td>
       </tr>

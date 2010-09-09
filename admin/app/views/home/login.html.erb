@@ -3,7 +3,7 @@
 # and open the template in the editor.
 %>
 
-<div style=" border: solid  #8dbdd8 1px; padding: 5px; font-size: 12px; width: 400px ">
+<div class="form_style" style="width: 400px">
   <form method="post" action="/home/login">
     <input type="hidden"  value="<%= form_authenticity_token %>"  name="authenticity_token"/>
     <table width="100%">
@@ -11,7 +11,7 @@
         <td colspan="2"><h2>Login Form</h2></td>
       </tr>
       <tr>
-        <td colspan="2"><span style="color: red; font-size: small"><%= @message %></span></td>
+        <td colspan="2"><span class="notify"><%= @message %></span></td>
       </tr>
       <tr>
         <td>User name: </td>

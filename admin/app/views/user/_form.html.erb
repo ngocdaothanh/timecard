@@ -1,10 +1,10 @@
-<ul style="font-size: smaller; color: red">
+<ul class="notify">
   <% @errors.each do |error| %>
-    <li><%=  error %></li>
+    <li><%= error %></li>
   <% end %>
 </ul>
-<span style="color: red; font-size: small"><%= @message %></span><br /><br />
-<div style=" border: solid  #8dbdd8 1px; padding: 5px; font-size: 12px; width: 500px ">
+<span class="notify"><%= @message %></span><br />
+<div class="form_style" style="width: 500px">
   <table>
     <% if session['is_admin'] %>    <%# is admin %>
       <tr>
