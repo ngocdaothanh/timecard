@@ -14,9 +14,13 @@ span a:hover {
 
 .form_style {
     border: solid  #8dbdd8 1px;
-    padding: 5px;
+    padding: 5px 15px 5px 15px ;
     font-size: 12px;
     width: 500px;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -khtml-border-radius: 20px;
+    border-radius: 20px;
 }
 
 .notify {
