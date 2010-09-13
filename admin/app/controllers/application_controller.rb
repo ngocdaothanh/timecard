@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   include SessionsHelper
   include ApplicationHelper
+  include TimeentriesHelper
 
   def must_login
     redirect_to :controller => "home", :action => "login"

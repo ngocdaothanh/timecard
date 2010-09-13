@@ -3,6 +3,7 @@ Admin::Application.routes.draw do
 
   get "csv/download"
   get "timeentries/index"
+  get "timeentries/get_time_entries"
   
   get 'home/index'
 

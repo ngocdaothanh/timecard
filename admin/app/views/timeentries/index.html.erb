@@ -1,6 +1,60 @@
 <html>
   <head>
     <title>Demo</title>
+
+<%= stylesheet_link_tag 'themes/redmond/jquery-ui-1.8.2.custom', 'themes/ui.jqgrid','themes/ui.multiselect'  %>
+<%= javascript_include_tag 'jqgrid/i18n/grid.locale-en', 'jqgrid/jquery.jqGrid'%>
+
+    <script type="text/javascript">
+jQuery().ready(function (){
+	jQuery("#list1").jqGrid({
+		url:"/timeentries/get_time_entries?id=<%=params[:id]%>",
+		datatype: "xml",
+		colNames:['Actions','Date','Arrive', 'Out', 'Return','Leave','Exception','Notes'],
+		colModel:[
+                  {name:'act',index:'act', width:75,sortable:false}, 
+                  {name:'date',index:'date', width:75, editable:true},
+                  {name:'arrive_at',index:'arrive', width:90, editable:true},
+                  {name:'out_at',index:'out', width:100, editable:true},
+                  {name:'return_at',index:'return', width:80, editable:true},
+                  {name:'leave_at',index:'leave', width:80, editable:true},
+                  {name:'tcexception_id',index:'exception', width:80, editable:true,edittype:"select",editoptions:{value:"<%=get_exceptions%>"}},
+                  {name:'notes',index:'notes', width:150, editable:true} ],
+		//rowNum:10,
+		autowidth: true,
+		//rowList:[10,20,30],
+		//pager: jQuery('#pager1'),
+		//sortname: 'id',
+		//viewrecords: true,
+		//sortorder: "desc",
+		caption:"Time Entries",
+          gridComplete: function(){
+            var ids = jQuery("#list1").jqGrid('getDataIDs');
+            for(var i=0;i < ids.length;i++){
+              var cl = ids[i];
+              be = "<input style='height:22px;width:20px;' type='button' value='E' onclick=\"jQuery('#list1').editRow('"+cl+"');\" />";
+              se = "<input style='height:22px;width:20px;' type='button' value='S' onclick=\"jQuery('#list1').saveRow('"+cl+"');\" />";
+              ce = "<input style='height:22px;width:20px;' type='button' value='C' onclick=\"jQuery('#list1').restoreRow('"+cl+"');\" />";
+              jQuery("#list1").jqGrid('setRowData',ids[i],{act:be+se+ce}); }
+
+            var isManager = $('#ismanager').attr('value');
+            if (isManager == 'false') {
+              //$("#list1").find('input').each(function(index) {
+              $("input","#list1").each(function(index) {
+                  $(this).attr("disabled",true);
+              });
+
+            }
+          },
+          editurl: "/timeentries/tableedit"
+          });
+
+          
+});
+
+
+</script>
+
   </head>
   <body>
     <p style="font-size: 12px">Full Name : <%=@user.name %> </p>
@@ -8,33 +62,8 @@
     <p style="font-size: 12px">Manager : <%=@user.manager_name %> </p>
     <input type="hidden" id="ismanager" value="<%=is_manager_of(@user)%>"/>
 
-    <table id="tablesorter-demo" class="tablesorter" border="0" cellpadding="0" cellspacing="1">
-      <thead>
-        <tr>
-          <th>Date</th>
-          <th>Arrive</th>
-          <th>Out</th>
-          <th>Return</th>
-          <th>Leave</th>
-          <th>Exception</th>
-          <th>Notes</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @timeentries.each do |timeentry| %>
-          <tr>
-            <td class="id" style="display:none"><%=timeentry.id %></td>
-            <td name="date"><%=timeentry.date %></td>
-            <td name="arrive_at"><%=formatted_hour(timeentry.arrive_at) %></td>
-            <td name="out_at"><%=formatted_hour(timeentry.out_at) %></td>
-            <td name="return_at"><%=formatted_hour(timeentry.return_at) %></td>
-            <td name="leave_at"><%=formatted_hour(timeentry.leave_at) %></td>
-            <td name="tcexception"><%=timeentry.exception %></td>
-            <td name="notes"><%=timeentry.notes %></td>
-          </tr>
-        <%end%>
-      </tbody>
-    </table>
+    <table id="list1"></table> <div id="pager1"></div>
+    
     <input type="button" value="Export CSV" onclick="document.location = '/csv/download?id=<%=@user.id %>'"/>
     <input type="button" value="Back" onclick="document.location = '/user/index'"/>
   </body>
