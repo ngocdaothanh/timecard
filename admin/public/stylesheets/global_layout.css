@@ -1,6 +1,86 @@
-html,body{
-      margin:0;
-      padding:0;
-      height:100%;
-      border:none
+html,body {
+    margin:0;
+    padding:0;
+    height:100%;
+    border:none;
+}
+
+body {
+     background:url("/images/background.jpeg");
+}
+
+body > table {
+    height: 100%;
+    width: 100%;
+}
+
+.form_style {
+    border: solid  #8dbdd8 1px;
+    padding: 5px 15px 5px 15px ;
+    font-size: 12px;
+    width: 500px;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -khtml-border-radius: 20px;
+    border-radius: 20px;
+}
+
+.notify {
+    color: red;
+    font-size: small;
+}
+
+/* home/index.html.erb */
+.span_large_dark {
+    font-size: large;
+    color: darkcyan;
+}
+
+.span_small_red {
+    font-size: small;
+    color: red;
+}
+
+.footer_company {
+    font-size:10px;
+    color: #ffffff;
+}
+
+.footer {
+    text-align: center; 
+    vertical-align: middle;
+    background-color:#606060;
+    height: 20px;
+}
+
+.width_12 {
+    width: 12%;
+}
+
+.header_banner {
+    padding: 15px;
+    background-color: #606060;
+    height:50px;
+}
+
+.menu {
+    text-align: right;
+    vertical-align: middle;
+    background-color:#606060;
+    height: 12px;
+}
+
+.body_content {
+    vertical-align: top; 
+    padding: 15px;
+    background-color:#eeeeee;
+}
+
+.span_menu_name {
+    color:#99ccff;
+    font-size: 11px;
+}
+
+.font_12 {
+    font-size: 12px;
 }

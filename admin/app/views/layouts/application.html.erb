@@ -3,45 +3,39 @@
 <head>
   <title><%=@title%></title>
   <%= stylesheet_link_tag :all %>
-  <%= javascript_include_tag :defaults, 'jquery.uitableedit'%>
+  <%= javascript_include_tag :defaults%>
   <%= csrf_meta_tag %>
 </head>
-<body background="/images/background.jpeg">
-  <table height="100%" width="100%" cellspacing="1">
+<body>
+  <table cellspacing="1">
     <tbody>
       <tr>
-        <td style="width: 12%;"></td>
-        <td style="padding: 15px; background-color: #606060; height:50px">
-          <span style=" font-size: x-large; color:#ffffff">TimeCard System</span>
+        <td class="width_12"></td>
+        <td class="header_banner">
+          <span class="span_large_dark">TimeCard System</span>
         </td>
-        <td style="width: 12%"></td>
+        <td class="width_12"></td>
       </tr>
       <tr>
-        <td style="width: 12%;"></td>
-        <td style="text-align: right; vertical-align: middle; background-color:#606060; height: 12px">
-          <% if session['is_admin'] %><span style="color:#99ccff; font-size: 11px;">Administrator: </span><% end %>
-          <span style="color:#99ccff; font-size: 11px;"><%= session['user_name'] %></span>
-          <% if session['is_authenticated'] %><span><%= link_to 'Users', "/user/index" %></span><% end %>
-          <% if session['is_admin'] %><span><%= link_to 'Create User', "/user/create" %></span><% end %>
-          <span><%= link_to 'Home', "/home/index" %></span>
-          <% if session['is_authenticated'] %><span><%= link_to 'Logout', "/home/logout" %></span><% end %>
-          <% if not session['is_authenticated'] %><span><%= link_to 'Login', "/home/login" %></span><% end %>
+        <td class="width_12"></td>
+        <td class="menu">
+          <%= render 'layouts/menu' %>
         </td>
-        <td style="width: 12%"></td>
+        <td class="width_12"></td>
       </tr>
       <tr>
-        <td style="width: 12%;"></td>
-        <td style="vertical-align: top; padding: 15px; background-color:#eeeeee;">
+        <td class="width_12"></td>
+        <td class="body_content">
           <%= yield %>
         </td>
-        <td style="width: 12%"></td>
+        <td class="width_12"></td>
       </tr>
     </tbody>
     <tfoot>
       <tr>
         <td></td>
-        <td style="text-align: center; vertical-align: middle; background-color:#606060; height: 20px">
-          <span style="font-size:10px ; color: #ffffff">GNT - Company</span>
+        <td class="footer">
+          <span class="footer_company">GNT - Company</span>
         </td>
         <td></td>
       </tr>

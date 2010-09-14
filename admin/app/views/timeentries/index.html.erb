@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>Demo</title>
+    <title>Time Entries</title>
 
 <%= stylesheet_link_tag 'themes/redmond/jquery-ui-1.8.2.custom', 'themes/ui.jqgrid','themes/ui.multiselect'  %>
 <%= javascript_include_tag 'jqgrid/i18n/grid.locale-en', 'jqgrid/jquery.jqGrid'%>
@@ -57,13 +57,13 @@ jQuery().ready(function (){
 
   </head>
   <body>
-    <p style="font-size: 12px">Full Name : <%=@user.name %> </p>
-    <p style="font-size: 12px">Group Name : <%=@user.group.name %> </p>
-    <p style="font-size: 12px">Manager : <%=@user.manager_name %> </p>
+    <p class="font_12">Full Name : <%=@user.name %> </p>
+    <p class="font_12">Group Name : <%=@user.group.name %> </p>
+    <p class="font_12">Manager : <%=@user.manager_name %> </p>
     <input type="hidden" id="ismanager" value="<%=is_manager_of(@user)%>"/>
 
     <table id="list1"></table> <div id="pager1"></div>
-    
+    <p></p>
     <input type="button" value="Export CSV" onclick="document.location = '/csv/download?id=<%=@user.id %>'"/>
     <input type="button" value="Back" onclick="document.location = '/user/index'"/>
   </body>

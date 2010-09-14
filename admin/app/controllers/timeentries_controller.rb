@@ -90,14 +90,4 @@ class TimeentriesController < ApplicationController
     render :text => 'OK' and return
     #render :text => 'Error'
   end
-
-  def get_exceptions
-    ex_all = Tcexception.all
-
-    ex_all.each { |ex|
-      result << ex.id << ":" << ex.value << ";"
-    }
-
-    result
-  end
 end
