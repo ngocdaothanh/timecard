@@ -9,6 +9,11 @@ class Project(info: ProjectInfo) extends DefaultProject(info) {
 
   val v4l4j = "au.edu.jcu" % "v4l4j" % "latest" from "file:///usr/share/java/v4l4j.jar"
 
+  //Jars for jcouchdb
+  val jcouchdb = "com.google.code.jcouchdb" % "jcouchdb" % "1.0.1-1"
+  val jcip = "net.jcip" % "jcip-annotations" % "1.0"
+
+
   override def libraryDependencies =
     Set(
       "org.scala-lang" % "scala-swing" % "2.8.0"
