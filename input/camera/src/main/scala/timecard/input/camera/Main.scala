@@ -2,6 +2,7 @@ package timecard.input.camera
 
 import java.io.File
 
+
 object Main {
   def main(args: Array[String]) {
     val devs = videoDevices

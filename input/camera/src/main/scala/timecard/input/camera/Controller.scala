@@ -4,9 +4,11 @@ package timecard.input.camera
 
 import java.awt.event.{WindowAdapter, WindowEvent}
 import javax.swing.{JFrame, WindowConstants, JLabel, ButtonGroup, JRadioButton}
+import java.awt.Container
 
 class Controller extends WindowAdapter {
   private var f: JFrame = null
+  private var cp: Container = null
   private var c: DigitalClock = null
 
   init()
@@ -28,13 +30,15 @@ class Controller extends WindowAdapter {
    */
   private def initGUI() {
     f = new JFrame
-    f.getContentPane.setLayout(new java.awt.FlowLayout)
+    cp = f.getContentPane
+    cp.setLayout(new java.awt.FlowLayout)
 
     c = new DigitalClock
-    f.getContentPane.add(c)
+    cp.add(c)
 
     val group = new ButtonGroup
-    val b1 = new JRadioButton("出");  b1.setSelected(true)
+    val b1 = new JRadioButton("出");
+    b1.setSelected(true)
     val b2 = new JRadioButton("外")
     val b3 = new JRadioButton("戻")
     val b4 = new JRadioButton("退")
@@ -43,10 +47,10 @@ class Controller extends WindowAdapter {
     group.add(b3)
     group.add(b4)
 
-    f.getContentPane.add(b1)
-    f.getContentPane.add(b2)
-    f.getContentPane.add(b3)
-    f.getContentPane.add(b4)
+    cp.add(b1)
+    cp.add(b2)
+    cp.add(b3)
+    cp.add(b4)
 
     f.setTitle("Time Card")
     f.setSize(240, 480)

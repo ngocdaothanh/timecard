@@ -5,21 +5,22 @@ package timecard.input.camera
 import java.awt.event.{WindowAdapter, WindowEvent}
 import java.awt.{Graphics2D, Image}
 import java.awt.image.BufferedImage
-import javax.swing.{JFrame, WindowConstants, JLabel, ImageIcon, JRadioButton}
-
 import au.edu.jcu.v4l4j.{VideoDevice, FrameGrabber, V4L4JConstants}
 import au.edu.jcu.v4l4j.exceptions.V4L4JException
+import javax.swing._
+import main.scala.timecard.input.camera.{TimeOptions}
 
 /**
  * @param dev the video device file to capture from
  */
 class Viewer(dev: String) extends WindowAdapter {
-  private var vd:       VideoDevice  = null
-  private var fg:       FrameGrabber = null
-  private var fgThread: Thread       = null
+  private var vd: VideoDevice = null
+  private var fg: FrameGrabber = null
+  private var fgThread: Thread = null
 
   private var f: JFrame = null
   private var l: JLabel = null
+  private var customDialog: JDialog = null
 
   private var qrcode: QRCode = null
   private var stopped = false
@@ -70,8 +71,8 @@ class Viewer(dev: String) extends WindowAdapter {
   }
 
   private def initFrameGrabber() {
-    val w   = 640
-    val h   = 480
+    val w = 640
+    val h = 480
     val std = V4L4JConstants.STANDARD_WEBCAM
     val chn = 0
     val qty = 60
@@ -97,13 +98,28 @@ class Viewer(dev: String) extends WindowAdapter {
             // Create a BufferedImage from the icon
             val i = icon.getImage
             val bi = (f.createImage(i.getWidth(f), i.getHeight(f))).asInstanceOf[BufferedImage]
-            val g = bi.createGraphics()  // Get a Graphics2D object
-            g.drawImage(i, 0, 0, f)      // Draw the Image data into the BufferedImage
-            val text = qrcode.read(bi)
-            if (text != null) {
-              System.out.println(text)
+            val g = bi.createGraphics() // Get a Graphics2D object
+            g.drawImage(i, 0, 0, f) // Draw the Image data into the BufferedImage
+            val userId = qrcode.read(bi)
+            if (userId != null) {
+              System.out.println(userId)
+
+              //Check if userId is exists
+              val name = DB.getName(userId)
+              if (name != null) {
+                fg.stopCapture
+
+                //Show Modal dialog
+                val now = new java.util.Date
+                //val dummyUserId = "ae5e44340c2a0f3e3f68a785ca4eb394"
+                customDialog = new TimeOptions(f, true, userId, name, now)
+                customDialog.pack
+                customDialog.setVisible(true)
+
+                fg.startCapture
+              }
             } else {
-              System.out.println("")
+              //System.out.println("")
             }
           }
         } catch {

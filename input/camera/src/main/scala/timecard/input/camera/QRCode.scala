@@ -14,7 +14,7 @@ class QRCode {
   def read(image: BufferedImage): String = {
     val source = new BufferedImageLuminanceSource(image)
     val bitmap = new BinaryBitmap(new HybridBinarizer(source))
-    val hints  = new Hashtable[DecodeHintType, Object]
+    val hints = new Hashtable[DecodeHintType, Object]
     hints.put(DecodeHintType.TRY_HARDER, java.lang.Boolean.TRUE)
     try {
       val result = reader.decode(bitmap, hints)

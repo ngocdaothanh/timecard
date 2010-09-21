@@ -2,17 +2,17 @@ import sbt._
 
 class Project(info: ProjectInfo) extends DefaultProject(info) {
   val localMavenRepo = "Local Maven Repo" at
-    "file://" + Path.userHome + "/.m2/repository"
+          "file://" + Path.userHome + "/.m2/repository"
 
   val localIvyRepo = "Local Ivy Repo" at
-    "file://" + Path.userHome + "/.ivy2/local"
+          "file://" + Path.userHome + "/.ivy2/local"
 
   val v4l4j = "au.edu.jcu" % "v4l4j" % "latest" from "file:///usr/share/java/v4l4j.jar"
 
   override def libraryDependencies =
     Set(
       "org.scala-lang" % "scala-swing" % "2.8.0"
-    ) ++ super.libraryDependencies
+      ) ++ super.libraryDependencies
 
   override def mainClass = Some("timecard.input.camera.Main")
 

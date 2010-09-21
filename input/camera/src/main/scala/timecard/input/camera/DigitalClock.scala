@@ -7,7 +7,7 @@ import javax.swing.JComponent
 
 class DigitalClock extends JComponent {
   private val tflz = new DecimalFormat("00")
-  private val tf   = new DecimalFormat("#0")
+  private val tf = new DecimalFormat("#0")
 
   private var newFont: Font = null
   private var stopped = false
@@ -32,7 +32,7 @@ class DigitalClock extends JComponent {
   // Paint H:MM:SS at the center of this component
   override def paint(g: Graphics) {
     val cal = Calendar.getInstance
-    val sb  = new StringBuffer
+    val sb = new StringBuffer
     sb.append(tf.format(cal.get(Calendar.HOUR_OF_DAY)))
     sb.append(':')
     sb.append(tflz.format(cal.get(Calendar.MINUTE)))
