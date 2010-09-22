@@ -1,27 +1,30 @@
 class TimeentriesController < ApplicationController
-  def index
+  before_filter :set_title
+
+  def set_title
     @title = 'Working Time List'
+  end
+
+  def index
     #puts "Trong TimeentriesController index id=#{params[:id]}"
-    @id = params[:id]
     @user = User.find(params[:id])
-    @timeentries = @user.timeentries
-    @timeentry = @timeentries.first
-    @timeentries.each { |te|
-      te.exception = Tcexception.find(te.tcexception_id).value
-    }
+    #    @timeentries = @user.timeentries
+    #    @timeentry = @timeentries.first
+    #    @timeentries.each { |te|
+    #      te.exception = Tcexception.find(te.tcexception_id).value unless te.tcexception_id.nil?
+    #    }
     #@timeentry.exception = "Hello Exception"
   end
 
   def get_time_entries
-    @title = 'Working Time List'
-    #puts "Trong TimeentriesController index id=#{params[:id]}"
+    #puts "Trong TimeentriesController get_time_entries index id=#{params[:id]}"
     @user = User.find(params[:id])
     @timeentries = @user.timeentries
 
     xml_str = '<?xml version="1.0" encoding="UTF-8"?>'
     xml_str << "<rows>"
     @timeentries.each { |te|
-      te.exception = Tcexception.find(te.tcexception_id).value
+      te.exception = get_exception(te.tcexception_id)
 
       xml_str << "<row id='#{te.id}'>"
       #  <page>1</page>
@@ -44,7 +47,7 @@ class TimeentriesController < ApplicationController
   end
 
   def tableedit
-    puts "BBBBBBBB #{params}"
+    #puts "BBBBBBBB #{params}"
     #puts "BBBBBBBB #{params['oldValue']}"
 
     te_id = params[:id]
@@ -54,11 +57,17 @@ class TimeentriesController < ApplicationController
     # puts "old_te : #{old_te.attributes.to_options!}"
 
     params.keys.each do |key|
+      col_names = ["date", "arrive_at", "out_at", "return_at", "leave_at", "tcexception_id", "notes"]
+      time_col_names = ["arrive_at", "out_at", "return_at", "leave_at"]
       #puts key
       col_name = key
+      next unless col_names.include?(col_name)
+      
       #puts "Key: #{col_name}"
-      if col_name == "tcexception"
-        old_value = Tcexception.find(old_te.tcexception_id).value
+      if col_name == "date"
+        old_value = old_te.attributes[col_name.to_sym].to_s
+      elsif time_col_names.include?(col_name)
+          old_value = formatted_hour(old_te.attributes[col_name.to_sym])
       else
         old_value = old_te.attributes[col_name.to_sym]
       end
@@ -66,25 +75,24 @@ class TimeentriesController < ApplicationController
       new_value = params[col_name]
 
       #puts "#{old_value.blank?} || #{old_value.nil?} || #{old_value.class}"
-      next if old_value.blank?
+      next if old_value.blank? && new_value.blank?
       #puts "Old value : #{old_value} ;; New value : #{new_value}"
 
-      
       if (old_value != new_value)
         timeentry = Timeentry.find(te_id)
-        if (col_name == 'arrive_at' || col_name == 'out_at' || col_name == 'return_at' ||
-              col_name == 'leave_at')
+        if time_col_names.include?(col_name)
           tz = Time.zone.parse(new_value)
-          timeentry.update_attributes(col_name => tz.utc)
+          if tz.nil?
+            #puts " timeentry.update_attributes #{col_name} : nil"
+            timeentry.update_attributes(col_name => nil)
+          else
+            #puts " timeentry.update_attributes #{col_name} : #{tz.utc}"
+            timeentry.update_attributes(col_name => tz.utc)
+          end
         else
-          puts " timeentry.update_attributes #{col_name} : #{new_value}"
+          #puts " timeentry.update_attributes #{col_name} : #{new_value}"
           timeentry.update_attributes(col_name => new_value)
         end
-
-        # "id"=>"e897765e5e7b8d916703a673b95bedda",
-        # "oldValue"=>"2010-09-06 07:01:59 UTC", "newValue"=>"2010-09-06 07:01:59 UTC",
-        # "colName"=>":arrive_at", "controller"=>"timeentries", "action"=>"tableedit"
-       
       end
     end
     render :text => 'OK' and return
