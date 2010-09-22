@@ -4,6 +4,7 @@ target
 .*
 
 *.lock
+*.iml
 admin/nbproject/
 admin/log/development.log
 */log/*
