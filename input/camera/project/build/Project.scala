@@ -12,6 +12,7 @@ class Project(info: ProjectInfo) extends DefaultProject(info) {
   //Jars for jcouchdb
   val jcouchdb = "com.google.code.jcouchdb" % "jcouchdb" % "1.0.1-1"
   val jcip = "net.jcip" % "jcip-annotations" % "1.0"
+  val slf4j_log4j12 = "org.slf4j" % "slf4j-log4j12" % "1.6.1"
 
 
   override def libraryDependencies =

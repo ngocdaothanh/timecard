@@ -1,11 +1,10 @@
-package main.scala.timecard.input.camera
+package timecard.input.camera
 
 // See: http://code.google.com/p/v4l4j/wiki/Examples
 
-import _root_.timecard.input.camera.{DB, DigitalClock}
-import java.awt.Container
+import java.awt._
 import javax.swing._
-import java.awt.event.{ActionListener, ActionEvent, WindowAdapter, WindowEvent}
+import java.awt.event.{ActionListener, ActionEvent}
 import java.util._
 import java.text.SimpleDateFormat
 
@@ -20,8 +19,10 @@ class TimeOptions(parent: JFrame, modal: Boolean, userId: String, name:String, t
    */
   private def initGUI() {
     setTitle("Time Options")
-    setLayout(new java.awt.FlowLayout)
+    setLayout(new GridLayout(4, 1))
+    val cp = getContentPane()
 
+    //Row 4 radio buttons
     val group = new ButtonGroup
     val b1 = new JRadioButton(timeArray(0));   b1.setSelected(true)
     val b2 = new JRadioButton(timeArray(1))
@@ -32,26 +33,38 @@ class TimeOptions(parent: JFrame, modal: Boolean, userId: String, name:String, t
     group.add(b3)
     group.add(b4)
 
-    getContentPane().add(b1)
-    getContentPane().add(b2)
-    getContentPane().add(b3)
-    getContentPane().add(b4)
+    val radioPanel = new JPanel
+    //radioPanel.setLayout(new FlowLayout)
+    radioPanel.add(b1)
+    radioPanel.add(b2)
+    radioPanel.add(b3)
+    radioPanel.add(b4)
+    //radioPanel.setAlignmentX(Component.LEFT_ALIGNMENT)
 
-    //Get UserName from UserId
-    //val name = DB.getName(userId)
+    //Row Name
     val lblUserName = new JLabel("Name : " + name)
 
+    //Row Time
     val fmTime = formatTime(time)
     val lblTime = new JLabel("Time : " + fmTime)
+
+    //Row OK, Cancel button
     val btnOk = new JButton("Ok")
     val btnCancel = new JButton("Cancel")
+    val buttonPane = new JPanel
+    //buttonPane.setLayout(new FlowLayout(FlowLayout.LEFT))
+    buttonPane.add(btnOk)
+    buttonPane.add(btnCancel)
+    //buttonPane.setBorder(BorderFactory.createLineBorder(Color.black))
 
-    getContentPane().add(lblUserName)
-    getContentPane().add(lblTime)
-    getContentPane().add(btnOk)
-    getContentPane().add(btnCancel)
+    //Add to GUI
+    cp.add(new JPanel().add(lblUserName))
+    cp.add(new JPanel().add(lblTime))
+    cp.add(radioPanel)
+    cp.add(buttonPane)
 
     setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE)
+    setResizable(false)
 
     btnCancel.addActionListener(new ActionListener() {
       def actionPerformed(e: ActionEvent) {

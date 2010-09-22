@@ -3,13 +3,9 @@
 package timecard.input.camera
 
 import java.awt.event.{WindowAdapter, WindowEvent}
-import java.awt.{Graphics2D, Image}
 import java.awt.image.BufferedImage
 import au.edu.jcu.v4l4j.{VideoDevice, FrameGrabber, V4L4JConstants}
-import au.edu.jcu.v4l4j.exceptions.V4L4JException
 import javax.swing._
-import main.scala.timecard.input.camera.{TimeOptions}
-
 /**
  * @param dev the video device file to capture from
  */
