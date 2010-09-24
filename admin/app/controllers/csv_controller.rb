@@ -4,11 +4,22 @@ class CsvController < ApplicationController
     @user = User.find(params[:id])
     @timeentries = @user.timeentries
 
-    @outfile = "timeentries_" + Time.now.strftime("%m-%d-%Y") + ".csv"
+    @outfile = "#{@user.username}_#{Time.now.strftime("%Y-%m-%d")}.csv"
 
     require 'csv'
 
     csv_data = CSV.generate do |csv|
+      csv << [
+        "Name",
+        @user.name
+      ]
+      csv << [
+        "Group",
+        @user.group.name
+      ]
+      csv << [
+      ]
+
       csv << [
         "Date",
         "Arrive At",
@@ -46,7 +57,6 @@ class CsvController < ApplicationController
       :disposition => "attachment; filename=#{@outfile}"
 
     flash[:notice] = "Export complete!"
-
     # render :text => 'OK'
   end
 end
