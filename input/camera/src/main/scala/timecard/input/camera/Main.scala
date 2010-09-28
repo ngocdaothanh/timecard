@@ -4,13 +4,15 @@ import java.io.File
 
 
 object Main {
+  var c: Controller = null
+
   def main(args: Array[String]) {
     val devs = videoDevices
     if (devs.length == 0) {
       println("No camera")
     } else {
-      new Controller
-      for (dev <- devs) new Viewer(dev)
+      c = new Controller
+      for (dev <- devs) new Viewer(dev, c)
     }
   }
 

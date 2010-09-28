@@ -78,10 +78,4 @@ object DB {
     }
   }
 
-  /*
-  def main(args: Array[String]) {
-    //println(getName("ae5e44340c2a0f3e3f68a785ca4eb394"))
-    //saveTimeEntry("","",new java.util.Date)
-  } */
-
 }

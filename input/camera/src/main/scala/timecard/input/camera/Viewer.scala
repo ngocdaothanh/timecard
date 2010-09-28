@@ -6,10 +6,13 @@ import java.awt.event.{WindowAdapter, WindowEvent}
 import java.awt.image.BufferedImage
 import au.edu.jcu.v4l4j.{VideoDevice, FrameGrabber, V4L4JConstants}
 import javax.swing._
+import java.text.SimpleDateFormat
+import java.util._
+
 /**
  * @param dev the video device file to capture from
  */
-class Viewer(dev: String) extends WindowAdapter {
+class Viewer(dev: String, cf: Controller) extends WindowAdapter {
   private var vd: VideoDevice = null
   private var fg: FrameGrabber = null
   private var fgThread: Thread = null
@@ -105,17 +108,33 @@ class Viewer(dev: String) extends WindowAdapter {
               if (name != null) {
                 fg.stopCapture
 
-                //Show Modal dialog
+                //Show employee name and log time
                 val now = new java.util.Date
-                //val dummyUserId = "ae5e44340c2a0f3e3f68a785ca4eb394"
-                customDialog = new TimeOptions(f, true, userId, name, now)
-                customDialog.pack
-                customDialog.setVisible(true)
+                cf.lblTime.setText(formatTime(now))
+                cf.lblUserName.setText(name)
+
+                //Store into database
+                val timeOptionStr =
+                if (cf.timeOption == cf.timeArray(0))
+                  "arrive_at"
+                else if (cf.timeOption == cf.timeArray(1))
+                  "out_at"
+                else if (cf.timeOption == cf.timeArray(2))
+                  "return_at"
+                else
+                  "leave_at"
+                DB.saveTimeEntry(userId, timeOptionStr, now)
+                //dispose
+
+                //Insert log info
+                cf.txtLogScreen.append("- " + name + " : " + timeOptionStr + " : " + now + "\n")
+
+                Thread.sleep(2000)
 
                 fg.startCapture
               }
             } else {
-              //System.out.println("")
+              //System.out.println("no matching")
             }
           }
         } catch {
@@ -127,5 +146,9 @@ class Viewer(dev: String) extends WindowAdapter {
     })
 
     fgThread.start()
+  }
+
+  def formatTime(time: Date): String = {
+    new SimpleDateFormat("HH:mm").format(time);
   }
 }
