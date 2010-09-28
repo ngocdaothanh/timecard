@@ -7,12 +7,20 @@ object Main {
   var c: Controller = null
 
   def main(args: Array[String]) {
+    //Config file
+    val configPath =
+      if (args.length != 0)
+        args(0)
+      else
+        "release/config.properties"
+    val config = new Config(configPath)
+
     val devs = videoDevices
     if (devs.length == 0) {
       println("No camera")
     } else {
       c = new Controller
-      for (dev <- devs) new Viewer(dev, c)
+      for (dev <- devs) new Viewer(dev, c, config)
     }
   }
 

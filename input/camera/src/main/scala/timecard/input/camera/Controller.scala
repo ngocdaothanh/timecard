@@ -7,7 +7,6 @@ import javax.swing._
 import java.awt.event.{WindowAdapter, WindowEvent, ActionListener, ActionEvent}
 import javax.swing.{JFrame, WindowConstants, JLabel, ButtonGroup, JRadioButton}
 import java.awt.Container
-import se.datadosen.component.RiverLayout
 
 
 class Controller extends WindowAdapter {
@@ -90,7 +89,7 @@ class Controller extends WindowAdapter {
 
     //frame setting
     f.setTitle("Time Card")
-    f.setSize(425, 655)
+    f.setSize(425, 690)
     f.setResizable(false)
     f.setVisible(true)
 

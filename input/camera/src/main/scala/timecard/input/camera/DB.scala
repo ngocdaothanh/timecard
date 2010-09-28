@@ -8,18 +8,14 @@ import java.io.{IOException, File}
 import java.text.{SimpleDateFormat, DateFormat}
 import org.jcouchdb.document.{ViewAndDocumentsResult, BaseDocument}
 
-object DB {
-  val HOST = "localhost"
-  val HOST_PORT = Server.DEFAULT_PORT
-  val DB_NAME = "timecard"
-
-  val server = new ServerImpl(HOST, HOST_PORT)
+class DB(config:Config) {
+  val server = new ServerImpl(config.SERVER, config.SERVER_PORT)
   val databases = server.listDatabases
 
-  if (!databases.contains(DB_NAME)) {
-    server.createDatabase(DB_NAME)
+  if (!databases.contains(config.DB_NAME)) {
+    server.createDatabase(config.DB_NAME)
   }
-  val db = new Database(HOST, DB_NAME)
+  val db = new Database(config.SERVER, config.DB_NAME)
 
   createMapReduceJS("timecard-views")
 
@@ -34,7 +30,7 @@ object DB {
     }
   }
 
-  def saveTimeEntry(user_id: String, timeOption:String, time:Date) {
+  def saveTimeEntry(user_id: String, timeOption:String, time:Date, erase:Boolean = false) {
     val date: String = new SimpleDateFormat("yyyy-MM-dd").format(time)
 
     //Find by user_id and date
@@ -44,7 +40,11 @@ object DB {
     //println(result.getRows().size());
     if (result.getRows.size != 0) {
       val doc: Map[String, String] = result.getRows.get(0).getDocument
-      doc.put(timeOption, timeToGMT(time))
+      if (erase)
+        doc.put(timeOption, null)
+      else
+        doc.put(timeOption, timeToGMT(time))
+
       db.createOrUpdateDocument(doc)
     }
     else {
@@ -77,5 +77,11 @@ object DB {
       }
     }
   }
+
+  /*
+  def main(args: Array[String]) {
+    //println(getName("ae5e44340c2a0f3e3f68a785ca4eb394"))
+    saveTimeEntry("","",new java.util.Date)
+  } */
 
 }
