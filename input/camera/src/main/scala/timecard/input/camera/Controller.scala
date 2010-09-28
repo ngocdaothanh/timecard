@@ -5,20 +5,21 @@ package timecard.input.camera
 import java.awt._
 import javax.swing._
 import java.awt.event.{WindowAdapter, WindowEvent, ActionListener, ActionEvent}
-import javax.swing.{JFrame, WindowConstants, JLabel, ButtonGroup, JRadioButton}
+import javax.swing.{JFrame, WindowConstants, JLabel, ButtonGroup, JRadioButton, JScrollPane}
 import java.awt.Container
 
 
 class Controller extends WindowAdapter {
   var lblUserName: JLabel = null
   var lblTime: JLabel = null
-  var txtLogScreen: TextArea = null
+  var txtLogScreen: JTextArea = null
   val timeArray = Array("Arrive    ", "Out    ", "Return    ", "Leave    ")
   var timeOption = timeArray(0)
 
   private var f: JFrame = null
   private var rbtnPanel: JPanel = null
   private var userInfoPanel: JPanel = null
+  private var logScroll: JScrollPane = null
   private var cp: Container = null
   private var c: DigitalClock = null
 
@@ -81,11 +82,12 @@ class Controller extends WindowAdapter {
     cp.add(rbtnPanel)
 
     //log information UI
-    txtLogScreen = new TextArea("", 32, 50, TextArea.SCROLLBARS_VERTICAL_ONLY)
+    txtLogScreen = new JTextArea("", 35, 37)
     txtLogScreen.setForeground(new Color(255,255,255))
     txtLogScreen.setBackground(new Color(0,0,0))
     txtLogScreen.setEditable(false)
-    cp.add(txtLogScreen)
+    logScroll = new JScrollPane(txtLogScreen)
+    cp.add(logScroll)
 
     //frame setting
     f.setTitle("Time Card")
@@ -93,7 +95,6 @@ class Controller extends WindowAdapter {
     f.setResizable(false)
     f.setVisible(true)
 
-    //f.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE)
     f.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE)
     f.addWindowListener(this)
 

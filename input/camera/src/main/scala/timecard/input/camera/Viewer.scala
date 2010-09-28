@@ -24,6 +24,7 @@ class Viewer(dev: String, cf: Controller, config:Config) extends WindowAdapter {
   private var qrcode: QRCode = null
   private var stopped = false
 
+  private var logLine = 0
   private val db = new DB(config)
   private val sdf = new SimpleDateFormat("HH:mm")
   private val savedLog: java.util.Map[String, ArrayList[AnyRef]] = new java.util.HashMap
@@ -186,7 +187,14 @@ class Viewer(dev: String, cf: Controller, config:Config) extends WindowAdapter {
   }
 
   private def toLog(name:String, timeOptionStr:String, nowFmt:String) {
-    cf.txtLogScreen.append("- " + name + " " + mapTimeOptions(timeOptionStr) + " at " + nowFmt + "\n")
+     //Insert log info
+     if (logLine > 99) {
+       cf.txtLogScreen.setText("")
+       logLine = 0
+     }
+     logLine += 1
+     cf.txtLogScreen.append("- " + name + " " + mapTimeOptions(timeOptionStr) + " at " + nowFmt + "\n")
+     cf.txtLogScreen.setCaretPosition(cf.txtLogScreen.getDocument.getLength)   // View the last log line
   }
 
   private def formatTime(time: Date): String = sdf.format(time)
