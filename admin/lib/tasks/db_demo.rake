@@ -13,7 +13,6 @@ namespace :db do
 
     user_num = 0
 
-
     groupnames = ["Game", "RD"]
     groupnames.each do |gn|
       g = Group.create(:name => gn)

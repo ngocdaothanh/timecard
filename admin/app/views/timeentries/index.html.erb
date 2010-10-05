@@ -58,7 +58,7 @@ jQuery().ready(function (){
   </head>
   <body>
     <p class="font_12">Full Name : <%=@user.name %> </p>
-    <p class="font_12">Group Name : <%=@user.group.name %> </p>
+    <p class="font_12">Group Name : <%=@user.group_name(@user.group_id)%> </p>
     <p class="font_12">Manager : <%=@user.manager_name %> </p>
     <input type="hidden" id="ismanager" value="<%=is_manager_of(@user)%>"/>
 

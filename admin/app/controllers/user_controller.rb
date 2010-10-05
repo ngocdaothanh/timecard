@@ -24,13 +24,13 @@ class UserController < ApplicationController
 
     if request.post?
       # Validate
-      @existUser = User.find_by_username(params[:user][:username])
+      @existUser = User.find_by_username_and_disabled(params[:user][:username], false)
       if not (@existUser.nil?)
         @errors.insert(0, "#{params[:user][:username]} is existing")
       end
 
       if not params[:user][:password] == params[:user][:cfm_password]
-        @errors.insert(0, "Password and confirm password are not same")
+        @errors.insert(0, "Password and confirm password are not same sss")
       end
 
       if params[:user][:username] == ''
@@ -63,7 +63,7 @@ class UserController < ApplicationController
           @user = User.find(params[:user][:id])
 
           if @user.username != params[:user][:username]
-            @existUser = User.find_by_username(params[:user][:username])
+            @existUser = User.find_by_username_and_disabled(params[:user][:username], false)
             if not (@existUser.nil?)
               @errors.insert(0, "#{params[:user][:username]} is existing")
             end
